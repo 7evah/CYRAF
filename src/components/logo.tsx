@@ -1,16 +1,48 @@
-import { ShieldAlert } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Logo({ variant = 'dark' }: { variant?: 'light' | 'dark' }) {
   return (
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-md bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold">
-        <ShieldAlert className="w-6 h-6" />
-      </div>
-      <div>
-        <div className={cn("font-semibold", variant === 'dark' ? 'text-foreground' : 'text-primary-foreground')}>Cycraf Security</div>
-        <div className={cn("text-xs", variant === 'dark' ? 'text-muted-foreground' : 'text-gray-300')}>Enterprise Cyber Defence</div>
-      </div>
+    <div className="flex items-center gap-2">
+      <svg
+        width="160"
+        height="40"
+        viewBox="0 0 180 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={cn(
+          'w-auto h-10',
+          variant === 'dark' ? 'text-foreground' : 'text-primary-foreground'
+        )}
+      >
+        <path
+          d="M32.8,39.1c-2.3,0-4.4-0.8-6.1-2.4C22.6,33,20.2,27.1,22.1,21c1-3.2,3-5.9,5.7-7.7c2.3-1.5,5-2.2,7.7-2.2c2.1,0,4.2,0.6,6,1.7c-2.2,2.3-3.6,5.3-4,8.6c-0.5,4-0.1,8,1.3,11.7c-3.1,1.5-6.6,2.3-10.1,2.3C36.6,35.4,34.7,39.1,32.8,39.1z M34,16.1c-1.8-0.1-3.6,0.4-5.2,1.3c-2,1.1-3.5,2.9-4.4,5c-1.4,4.6,0.4,9.6,4.1,12.2c1.9,1.3,4.2,2,6.5,1.9c0.8-2.6,1.2-5.3,1.3-8.1C36.2,23.3,35.4,19.6,34,16.1z"
+          fill="currentColor"
+        />
+        <path
+          d="M58,28.6h-7.8V17.3h-4.3v11.3H38.2v3.6H58V28.6z"
+          fill="currentColor"
+        />
+        <path
+          d="M74.4,28.7c2.2,0.8,4.5,1.2,6.9,1.2c2,0,3.9-0.3,5.7-0.9c1.6-0.5,2.4-1.4,2.4-2.7c0-1.5-1.1-2.6-3.4-3.2l-3.2-0.9c-3.5-0.9-5.3-2.6-5.3-5.2c0-2.8,2-4.9,5.5-5.6V8.1h4.3v3.2c1.9,0.2,3.7,0.8,5.4,1.7l-1.6,3.8c-1.5-0.7-3.1-1.2-4.8-1.3c-1.4-0.1-2.8,0.2-4,0.7c-1.4,0.5-2.1,1.4-2.1,2.5c0,1.4,1,2.4,3.2,2.9l3.1,0.8c3.6,1,5.4,2.6,5.4,5.3c0,2.9-2.1,5.1-5.7,5.8v3.5h-4.3v-3.4c-2.7-0.3-5.2-1.1-7.4-2.3L74.4,28.7z"
+          fill="currentColor"
+        />
+        <path
+          d="M112.5,12.1h-4.3v20.1h4.3V12.1z"
+          fill="currentColor"
+        />
+        <path
+          d="M136.2,32.2h-7.8V12.1h-4.3v20.1h-7.7v3.6h19.8V32.2z"
+          fill="currentColor"
+        />
+        <path
+          d="M149.2,24.3c0-3.8,1.2-6.9,3.6-9.4c2.4-2.5,5.6-3.8,9.4-3.8c3.8,0,7,1.3,9.4,3.8c2.4,2.5,3.6,5.6,3.6,9.4c0,3.8-1.2,6.9-3.6,9.4c-2.4,2.5-5.6,3.8-9.4,3.8c-3.8,0-7-1.3-9.4-3.8C150.4,31.2,149.2,28.1,149.2,24.3z M153.5,24.3c0,2.9,0.9,5.3,2.6,7.1c1.8,1.8,4,2.7,6.6,2.7c2.6,0,4.8-0.9,6.6-2.7c1.8-1.8,2.6-4.2,2.6-7.1c0-2.9-0.9-5.3-2.6-7.1c-1.8-1.8-4-2.7-6.6-2.7c-2.6,0-4.8,0.9-6.6,2.7C154.3,19,153.5,21.4,153.5,24.3z"
+          fill="currentColor"
+        />
+        <path
+          d="M178.6,12.1v23.8h-4.1l-11.4-12.3v12.3h-4.3V12.1h4.1l11.4,12.3V12.1H178.6z"
+          fill="currentColor"
+        />
+      </svg>
     </div>
   );
 }
