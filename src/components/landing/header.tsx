@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
@@ -42,6 +42,9 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+              </SheetHeader>
               <div className="p-6">
                 <Logo />
                 <div className="mt-8 flex flex-col gap-4">
