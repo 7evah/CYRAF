@@ -1,24 +1,27 @@
-import { ClipboardCheck, Network, Bug, GraduationCap } from 'lucide-react';
 import { ServiceCard } from './service-card';
 
 const servicesData = [
   {
-    icon: ClipboardCheck,
+    img: "https://placehold.co/600x400.png",
+    hint: "security audit",
     title: "Risk Assessment",
     text: "Identify vulnerabilities and quantify risks to prioritize security investments."
   },
   {
-    icon: Network,
+    img: "https://placehold.co/600x400.png",
+    hint: "network diagram",
     title: "Secure Architecture",
     text: "Design secure systems and networks with defense-in-depth principles."
   },
   {
-    icon: Bug,
+    img: "https://placehold.co/600x400.png",
+    hint: "hacker code",
     title: "Penetration Testing",
     text: "Simulate real-world attacks to uncover security weaknesses before criminals do."
   },
   {
-    icon: GraduationCap,
+    img: "https://placehold.co/600x400.png",
+    hint: "team training",
     title: "Awareness Training",
     text: "Security awareness and technical training to build human firewalls."
   }
@@ -36,7 +39,8 @@ export function Services() {
         {servicesData.map((service, index) => (
           <ServiceCard
             key={index}
-            icon={service.icon}
+            img={service.img}
+            hint={service.hint}
             title={service.title}
             text={service.text}
           />
@@ -45,3 +49,4 @@ export function Services() {
     </section>
   );
 }
+    
