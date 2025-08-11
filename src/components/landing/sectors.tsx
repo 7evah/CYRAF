@@ -1,18 +1,21 @@
 import { SectorCard } from './sector-card';
+import healthcarepic from '../istockphoto-1437830105-612x612.jpg'
+import tranImg from '../cyber-train-qtsxk0x9ssqalum67msontw1filt6rzowpxsminxd8.jpg'
+import smartImg from '../599982-qssvw01s620je08wzdhn9gfcibxymim2pv9bh4z9gs.jpg'
 
 const sectorsData = [
   {
-    img: "https://placehold.co/600x400.png",
+    img: tranImg,
     hint: "transportation infrastructure",
     title: "Transportation"
   },
   {
-    img: "https://placehold.co/600x400.png",
+    img: healthcarepic,
     hint: "healthcare technology",
     title: "Healthcare"
   },
   {
-    img: "https://placehold.co/600x400.png",
+    img: smartImg,
     hint: "smart city",
     title: "Smart Cities"
   }

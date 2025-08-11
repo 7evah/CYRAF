@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { StaticImageData } from 'next/image';
 
 interface SectorCardProps {
-  img: string;
+  img: string | StaticImageData;
   title: string;
   hint: string;
 }

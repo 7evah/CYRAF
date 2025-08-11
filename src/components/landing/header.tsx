@@ -25,14 +25,17 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Logo />
 
-        <nav className="hidden md:flex items-center gap-6 text-sm">
+        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-primary transition-colors">
               {link.label}
             </Link>
           ))}
-          <Button onClick={onBookDemoClick} className="ml-4" size="sm">Book Demo</Button>
         </nav>
+
+        <div className="hidden md:flex">
+          <Button onClick={onBookDemoClick} size="sm">Book Demo</Button>
+        </div>
 
         <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -43,7 +46,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <div className="p-6">
                 <Logo />

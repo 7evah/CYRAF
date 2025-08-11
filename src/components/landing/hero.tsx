@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ShieldHalf, Zap } from 'lucide-react';
 import { AnimateOnScroll } from '../animate-on-scroll';
+import heropic from '../glowing-digital-lock-surrounded-by-600nw-2517566697.webp'
+import avatarpic from '../sigle-Cyraf-blue-983x1024.png'
 
 export function Hero({ demoButton }: { demoButton: ReactNode }) {
   return (
@@ -43,12 +45,12 @@ export function Hero({ demoButton }: { demoButton: ReactNode }) {
 
         <AnimateOnScroll animation="fade-left" className="relative">
           <div className="rounded-2xl overflow-hidden shadow-xl transform-gpu hover:scale-105 transition-transform duration-300">
-            <Image src="https://placehold.co/700x480.png" alt="cybersecurity dashboard" width={700} height={480} className="w-full object-cover" data-ai-hint="cybersecurity abstract" />
+            <Image src={heropic} alt="cybersecurity dashboard" width={700} height={480} className="w-full object-cover" data-ai-hint="cybersecurity abstract" />
           </div>
 
           <AnimateOnScroll animation="fade-up" className="absolute -bottom-8 -left-4 md:left-6 bg-card p-4 rounded-lg shadow-lg w-72 border">
             <div className="flex items-center gap-3">
-              <Image src="https://placehold.co/48x48.png" alt="analyst avatar" width={48} height={48} className="rounded-full object-cover" data-ai-hint="portrait professional" />
+              <Image src={avatarpic} alt="analyst avatar" width={48} height={48} className="rounded-full object-cover" data-ai-hint="portrait professional" />
               <div>
                 <div className="text-sm font-semibold text-foreground">Cycraf SOC</div>
                 <div className="text-xs text-muted-foreground">24/7 security operations center</div>

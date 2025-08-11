@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import aboutpic from '../photo-1542744173-8e7e53415bb0.avif'
 
 export function About() {
   return (
@@ -16,7 +17,7 @@ export function About() {
         </div>
 
         <div className="rounded-lg overflow-hidden shadow-lg">
-          <Image src="https://placehold.co/600x400.png" alt="our team in a meeting" width={600} height={400} className="w-full h-auto object-cover" data-ai-hint="team meeting" />
+          <Image src={aboutpic} alt="our team in a meeting" width={600} height={400} className="w-full h-auto object-cover" data-ai-hint="team meeting" />
         </div>
       </div>
     </section>

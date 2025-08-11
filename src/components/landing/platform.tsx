@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import platformImg from '../dashboardcalquenewtrea2.jpg'
 
 export function Platform({ demoButton }: { demoButton: ReactNode }) {
   return (
@@ -27,7 +28,7 @@ export function Platform({ demoButton }: { demoButton: ReactNode }) {
         </div>
 
         <div className="rounded-2xl overflow-hidden shadow-lg transform-gpu hover:scale-105 transition-transform duration-300">
-          <Image src="https://placehold.co/700x450.png" alt="platform interface" width={700} height={450} className="w-full h-auto object-cover" data-ai-hint="dashboard analytics" />
+          <Image src={platformImg} alt="platform interface" width={700} height={450} className="w-full h-auto object-cover" data-ai-hint="dashboard analytics" />
         </div>
       </div>
     </section>
