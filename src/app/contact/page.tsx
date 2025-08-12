@@ -6,12 +6,13 @@ import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from 'next/image';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Building2, Phone, Mail, Clock } from 'lucide-react';
 import { useState } from "react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-
+import contactuspic from '@/components/ContactUs.jpg'
 // Define props to satisfy Next.js page component signature
 interface ContactPageProps {
   params?: Record<string, string>;
@@ -25,12 +26,11 @@ export default function Contact({ params, searchParams }: ContactPageProps) {
     <div className="min-h-screen font-sans text-foreground bg-background">
       <Header onBookDemoClick={() => setDemoOpen(true)} />
       <main>
-        <div className="bg-gray-100 dark:bg-gray-900">
           {/* Hero Section */}
           <section
-            className="relative bg-cover bg-center py-24 text-white"
-            style={{ backgroundImage: "url('https://placehold.co/1200x400.png')" }}
-            data-ai-hint="contact communication"
+          className="relative bg-cover bg-center py-24 text-white"
+          style={{ backgroundImage: `url(${contactuspic.src})` }}
+          data-ai-hint="contact communication"
           >
             <div className="absolute inset-0 bg-black/50" />
             <div className="relative max-w-7xl mx-auto px-6 text-center">
@@ -44,105 +44,106 @@ export default function Contact({ params, searchParams }: ContactPageProps) {
           </section>
 
           {/* Info Blocks */}
-          <section className="grid md:grid-cols-4 gap-8 p-8 max-w-7xl mx-auto">
-            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
-              <Building2 className="text-primary text-3xl mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Our Building</h3>
-              <p>France: 125 Avenue Gabriel Peri, 95870 Bezons</p>
-              <p>Morocco: Avenue Soussa n°192 Zohour 2 FES</p>
-              <p>Spain: Avenida del Mar,20, 4711 El Ejido Palma, ES 07100</p>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '100ms' }}>
-              <Phone className="text-primary text-3xl mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-              <p>France: +33 7 63 09 22 96</p>
-              <p>Morocco: + 212 7 08 68 86 80</p>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '200ms' }}>
-              <Mail className="text-primary text-3xl mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Send it Today</h3>
-              <p>contact@cyraf.com</p>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '300ms' }}>
-              <Clock className="text-primary text-3xl mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Business Hours</h3>
-              <p>Open: Sunday – Friday</p>
-              <p>Close: Saturday</p>
-            </AnimateOnScroll>
+          <section className="bg-muted/50 py-20">
+            <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-8">
+                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '0ms' }}>
+                  <Building2 className="text-primary text-4xl mb-4 mx-auto" />
+                  <h3 className="text-xl font-semibold mb-2">Our Building</h3>
+                  <p className="text-muted-foreground text-sm">France: 125 Avenue Gabriel Peri, 95870 Bezons</p>
+                  <p className="text-muted-foreground text-sm">Morocco: Avenue Soussa n°192 Zohour 2 FES</p>
+                  <p className="text-muted-foreground text-sm">Spain: Avenida del Mar,20, 4711 El Ejido Palma, ES 07100</p>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '100ms' }}>
+                  <Phone className="text-primary text-4xl mb-4 mx-auto" />
+                  <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+                  <p className="text-muted-foreground text-sm">France: +33 7 63 09 22 96</p>
+                  <p className="text-muted-foreground text-sm">Morocco: + 212 7 08 68 86 80</p>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '200ms' }}>
+                  <Mail className="text-primary text-4xl mb-4 mx-auto" />
+                  <h3 className="text-xl font-semibold mb-2">Send it Today</h3>
+                  <p className="text-muted-foreground text-sm">contact@cyraf.com</p>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '300ms' }}>
+                  <Clock className="text-primary text-4xl mb-4 mx-auto" />
+                  <h3 className="text-xl font-semibold mb-2">Business Hours</h3>
+                  <p className="text-muted-foreground text-sm">Open: Sunday – Friday</p>
+                  <p className="text-muted-foreground text-sm">Close: Saturday</p>
+                </AnimateOnScroll>
+            </div>
           </section>
 
           {/* Contact Form */}
-          <AnimateOnScroll animation="zoom-in">
-            <section className="p-8 bg-card rounded-lg max-w-4xl mx-auto mb-16">
-              <form className="space-y-6">
-                <div>
-                  <label className="block mb-2 font-semibold">Company Name *</label>
-                  <Input
-                    type="text"
-                    required
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block mb-2 font-semibold">First Name *</label>
+          <div className="py-20 bg-background">
+            <AnimateOnScroll animation="zoom-in">
+                <section className="p-8 bg-card rounded-lg max-w-4xl mx-auto border">
+                <form className="space-y-6">
+                    <div>
+                    <label className="block mb-2 font-semibold">Company Name *</label>
                     <Input
-                      type="text"
-                      required
+                        type="text"
+                        required
                     />
-                  </div>
-                  <div>
-                    <label className="block mb-2 font-semibold">Last Name *</label>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label className="block mb-2 font-semibold">First Name *</label>
+                        <Input
+                        type="text"
+                        required
+                        />
+                    </div>
+                    <div>
+                        <label className="block mb-2 font-semibold">Last Name *</label>
+                        <Input
+                        type="text"
+                        required
+                        />
+                    </div>
+                    </div>
+
+                    <div>
+                    <label className="block mb-2 font-semibold">Email *</label>
                     <Input
-                      type="text"
-                      required
+                        type="email"
+                        required
                     />
-                  </div>
-                </div>
+                    </div>
 
-                <div>
-                  <label className="block mb-2 font-semibold">Email *</label>
-                  <Input
-                    type="email"
-                    required
-                  />
-                </div>
+                    <div>
+                    <label className="block mb-2 font-semibold">Subject *</label>
+                    <Select required>
+                        <SelectTrigger>
+                            <SelectValue placeholder="- Please select -" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="risk-assessment">Risk Assessment</SelectItem>
+                            <SelectItem value="architecture">Architecture</SelectItem>
+                            <SelectItem value="pen-testing">Pen-Testing</SelectItem>
+                            <SelectItem value="training">Training</SelectItem>
+                            <SelectItem value="general">General Inquiry</SelectItem>
+                        </SelectContent>
+                    </Select>
+                    </div>
 
-                <div>
-                  <label className="block mb-2 font-semibold">Subject *</label>
-                  <Select required>
-                      <SelectTrigger>
-                          <SelectValue placeholder="- Please select -" />
-                      </SelectTrigger>
-                      <SelectContent>
-                          <SelectItem value="risk-assessment">Risk Assessment</SelectItem>
-                          <SelectItem value="architecture">Architecture</SelectItem>
-                          <SelectItem value="pen-testing">Pen-Testing</SelectItem>
-                          <SelectItem value="training">Training</SelectItem>
-                          <SelectItem value="general">General Inquiry</SelectItem>
-                      </SelectContent>
-                  </Select>
-                </div>
+                    <div>
+                    <label className="block mb-2 font-semibold">Please tell us more! *</label>
+                    <Textarea
+                        rows={5}
+                        required
+                    ></Textarea>
+                    </div>
 
-                <div>
-                  <label className="block mb-2 font-semibold">Please tell us more! *</label>
-                  <Textarea
-                    rows={5}
-                    required
-                  ></Textarea>
-                </div>
-
-                <Button
-                  type="submit"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </section>
-          </AnimateOnScroll>
+                    <Button
+                    type="submit"
+                    >
+                    Send Message
+                    </Button>
+                </form>
+                </section>
+            </AnimateOnScroll>
+          </div>
 
           {/* Google Map */}
           <section className="p-8 max-w-7xl mx-auto">
@@ -156,7 +157,6 @@ export default function Contact({ params, searchParams }: ContactPageProps) {
               loading="lazy"
             ></iframe>
           </section>
-        </div>
       </main>
       <Footer />
       <DemoModal isOpen={demoOpen} onOpenChange={setDemoOpen} />
