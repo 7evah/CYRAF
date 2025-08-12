@@ -12,6 +12,7 @@ export function Logo({ variant = 'default' }: { variant?: 'default' | 'light' })
         src={LogoIcon}
         alt="Cycraf Logo"
         className="w-28 h-17"
+        priority
     
       />
     </Link>

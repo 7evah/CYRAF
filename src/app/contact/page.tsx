@@ -43,35 +43,61 @@ export default function Contact({ params, searchParams }: ContactPageProps) {
             </div>
           </section>
 
-          {/* Info Blocks */}
-          <section className="bg-muted/50 py-20">
-            <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-8">
-                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '0ms' }}>
-                  <Building2 className="text-primary text-4xl mb-4 mx-auto" />
-                  <h3 className="text-xl font-semibold mb-2">Our Building</h3>
-                  <p className="text-muted-foreground text-sm">France: 125 Avenue Gabriel Peri, 95870 Bezons</p>
-                  <p className="text-muted-foreground text-sm">Morocco: Avenue Soussa n°192 Zohour 2 FES</p>
-                  <p className="text-muted-foreground text-sm">Spain: Avenida del Mar,20, 4711 El Ejido Palma, ES 07100</p>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '100ms' }}>
-                  <Phone className="text-primary text-4xl mb-4 mx-auto" />
-                  <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-                  <p className="text-muted-foreground text-sm">France: +33 7 63 09 22 96</p>
-                  <p className="text-muted-foreground text-sm">Morocco: + 212 7 08 68 86 80</p>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '200ms' }}>
-                  <Mail className="text-primary text-4xl mb-4 mx-auto" />
-                  <h3 className="text-xl font-semibold mb-2">Send it Today</h3>
-                  <p className="text-muted-foreground text-sm">contact@cyraf.com</p>
-                </AnimateOnScroll>
-                <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground text-center" style={{ animationDelay: '300ms' }}>
-                  <Clock className="text-primary text-4xl mb-4 mx-auto" />
-                  <h3 className="text-xl font-semibold mb-2">Business Hours</h3>
-                  <p className="text-muted-foreground text-sm">Open: Sunday – Friday</p>
-                  <p className="text-muted-foreground text-sm">Close: Saturday</p>
-                </AnimateOnScroll>
-            </div>
-          </section>
+          <section className="bg-muted/50 py-16 md:py-24">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      {/* Card 1: Our Building */}
+      <AnimateOnScroll animation="fade-up" className="info-card">
+        <div className="info-card-icon-wrapper">
+          <Building2 className="h-8 w-8 text-primary" />
+        </div>
+        <h3 className="info-card-title">Our Buildings</h3>
+        <div className="info-card-content">
+          <p>France: 125 Av. Gabriel Peri, 95870 Bezons</p>
+          <p>Morocco: 192 Av. Soussa, Zohour 2, FES</p>
+          <p>Spain: 20 Av. del Mar, 4711 El Ejido Palma</p>
+        </div>
+      </AnimateOnScroll>
+
+      {/* Card 2: Call Us */}
+      <AnimateOnScroll animation="fade-up" className="info-card">
+        <div className="info-card-icon-wrapper">
+          <Phone className="h-8 w-8 text-primary" />
+        </div>
+        <h3 className="info-card-title">Call Us</h3>
+        <div className="info-card-content">
+          <p>France: +33 7 63 09 22 96</p>
+          <p>Morocco: +212 7 08 68 86 80</p>
+        </div>
+      </AnimateOnScroll>
+
+      {/* Card 3: Email */}
+      <AnimateOnScroll animation="fade-up" className="info-card">
+        <div className="info-card-icon-wrapper">
+          <Mail className="h-8 w-8 text-primary" />
+        </div>
+        <h3 className="info-card-title">Send it Today</h3>
+        <div className="info-card-content">
+          <p>contact@cyraf.com</p>
+        </div>
+      </AnimateOnScroll>
+
+      {/* Card 4: Business Hours */}
+      <AnimateOnScroll animation="fade-up" className="info-card">
+        <div className="info-card-icon-wrapper">
+          <Clock className="h-8 w-8 text-primary" />
+        </div>
+        <h3 className="info-card-title">Business Hours</h3>
+        <div className="info-card-content">
+          <p>Open: Sunday – Friday</p>
+          <p>Close: Saturday</p>
+        </div>
+      </AnimateOnScroll>
+
+    </div>
+  </div>
+</section>
 
           {/* Contact Form */}
           <div className="py-20 bg-background">

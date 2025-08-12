@@ -13,20 +13,32 @@ import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const [demoOpen, setDemoOpen] = useState(false);
 
-  const DemoButton = ({ children, variant = "default" }: { children: ReactNode, variant?: "default" | "outline" | "secondary" | "ghost" | "link" }) => (
+  const DemoButton = ({
+    children,
+    variant = "default",
+  }: {
+    children: ReactNode;
+    variant?: "default" | "outline" | "secondary" | "ghost" | "link";
+  }) => (
     <Button
       onClick={() => setDemoOpen(true)}
-      variant={variant === "outline" ? "outline" : "default"}
-      className={variant === 'outline' ? "border-primary text-primary hover:bg-primary/10" : ""}
+      variant={variant}
       size="lg"
+      className={cn(
+        "shadow hover:translate-y-[-2px] transition-transform", // matches primary button hover
+        variant === "outline" &&
+          "border-primary text-primary hover:bg-primary/10 hover:text-black hover:border-black"
+      )}
     >
       {children}
     </Button>
   );
+
 
   return (
     <div className="min-h-screen font-sans text-foreground">

@@ -69,3 +69,43 @@
     transform: translateY(0) translateX(0) scale(1);
   }
 }
+/* Card Styling */
+.info-card {
+  @apply flex flex-col items-center rounded-xl border bg-card p-6 text-center text-card-foreground shadow-sm transition-all duration-300 ease-in-out;
+}
+.info-card:hover {
+  @apply -translate-y-2 shadow-lg;
+}
+.info-card-icon-wrapper {
+  @apply mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 transition-all duration-300;
+}
+.info-card:hover .info-card-icon-wrapper {
+  @apply scale-110 bg-primary/20;
+}
+.info-card-title {
+  @apply mb-2 text-lg font-bold;
+}
+.info-card-content {
+  @apply space-y-1 text-sm text-muted-foreground;
+}
+
+/* Base Animation State */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+[data-aos="fade-up"] {
+  transform: translateY(20px);
+}
+
+/* Animation Trigger State */
+[data-aos][data-in-view="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Delay using nth-child */
+.info-card:nth-child(1) { animation-delay: 0ms; }
+.info-card:nth-child(2) { animation-delay: 100ms; }
+.info-card:nth-child(3) { animation-delay: 200ms; }
+.info-card:nth-child(4) { animation-delay: 300ms; }

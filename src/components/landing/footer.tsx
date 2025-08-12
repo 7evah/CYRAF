@@ -16,8 +16,6 @@ export function Footer() {
         src={LogoIcon}
         alt="Cycraf Logo"
         className="w-28 h-17"
-        width={112} // w-28 in pixels
-        height={68} // h-17 (close to ratio, adjust as needed)
         priority // loads faster
     
       />
