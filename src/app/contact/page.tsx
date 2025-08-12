@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Building2, Phone, Mail, Clock } from 'lucide-react';
 import { useState } from "react";
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 // Define props to satisfy Next.js page component signature
 interface ContactPageProps {
@@ -26,109 +27,122 @@ export default function Contact({ params, searchParams }: ContactPageProps) {
       <main>
         <div className="bg-gray-100 dark:bg-gray-900">
           {/* Hero Section */}
-          <section className="bg-gradient-to-r from-primary/80 to-primary py-16 text-center text-primary-foreground">
-            <h2 className="text-4xl font-bold mb-2">Let’s meet & talk today</h2>
-            <p className="text-xl">Contact us.</p>
+          <section
+            className="relative bg-cover bg-center py-24 text-white"
+            style={{ backgroundImage: "url('https://placehold.co/1200x400.png')" }}
+            data-ai-hint="contact communication"
+          >
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <AnimateOnScroll animation="fade-up">
+                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">Get in Touch</h1>
+                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                  We’re here to help and answer any question you might have. We look forward to hearing from you.
+                </p>
+              </AnimateOnScroll>
+            </div>
           </section>
 
           {/* Info Blocks */}
           <section className="grid md:grid-cols-4 gap-8 p-8 max-w-7xl mx-auto">
-            <div className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
+            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
               <Building2 className="text-primary text-3xl mb-4" />
               <h3 className="text-lg font-semibold mb-2">Our Building</h3>
               <p>France: 125 Avenue Gabriel Peri, 95870 Bezons</p>
               <p>Morocco: Avenue Soussa n°192 Zohour 2 FES</p>
               <p>Spain: Avenida del Mar,20, 4711 El Ejido Palma, ES 07100</p>
-            </div>
+            </AnimateOnScroll>
 
-            <div className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
+            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '100ms' }}>
               <Phone className="text-primary text-3xl mb-4" />
               <h3 className="text-lg font-semibold mb-2">Call Us</h3>
               <p>France: +33 7 63 09 22 96</p>
               <p>Morocco: + 212 7 08 68 86 80</p>
-            </div>
+            </AnimateOnScroll>
 
-            <div className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
+            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '200ms' }}>
               <Mail className="text-primary text-3xl mb-4" />
               <h3 className="text-lg font-semibold mb-2">Send it Today</h3>
               <p>contact@cyraf.com</p>
-            </div>
+            </AnimateOnScroll>
 
-            <div className="bg-card p-6 rounded-lg shadow-lg text-card-foreground">
+            <AnimateOnScroll animation="fade-up" className="bg-card p-6 rounded-lg shadow-lg text-card-foreground" style={{ animationDelay: '300ms' }}>
               <Clock className="text-primary text-3xl mb-4" />
               <h3 className="text-lg font-semibold mb-2">Business Hours</h3>
               <p>Open: Sunday – Friday</p>
               <p>Close: Saturday</p>
-            </div>
+            </AnimateOnScroll>
           </section>
 
           {/* Contact Form */}
-          <section className="p-8 bg-card rounded-lg max-w-4xl mx-auto mb-16">
-            <form className="space-y-6">
-              <div>
-                <label className="block mb-2 font-semibold">Company Name *</label>
-                <Input
-                  type="text"
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <AnimateOnScroll animation="zoom-in">
+            <section className="p-8 bg-card rounded-lg max-w-4xl mx-auto mb-16">
+              <form className="space-y-6">
                 <div>
-                  <label className="block mb-2 font-semibold">First Name *</label>
+                  <label className="block mb-2 font-semibold">Company Name *</label>
                   <Input
                     type="text"
                     required
                   />
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block mb-2 font-semibold">First Name *</label>
+                    <Input
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block mb-2 font-semibold">Last Name *</label>
+                    <Input
+                      type="text"
+                      required
+                    />
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block mb-2 font-semibold">Last Name *</label>
+                  <label className="block mb-2 font-semibold">Email *</label>
                   <Input
-                    type="text"
+                    type="email"
                     required
                   />
                 </div>
-              </div>
 
-              <div>
-                <label className="block mb-2 font-semibold">Email *</label>
-                <Input
-                  type="email"
-                  required
-                />
-              </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Subject *</label>
+                  <Select required>
+                      <SelectTrigger>
+                          <SelectValue placeholder="- Please select -" />
+                      </SelectTrigger>
+                      <SelectContent>
+                          <SelectItem value="risk-assessment">Risk Assessment</SelectItem>
+                          <SelectItem value="architecture">Architecture</SelectItem>
+                          <SelectItem value="pen-testing">Pen-Testing</SelectItem>
+                          <SelectItem value="training">Training</SelectItem>
+                          <SelectItem value="general">General Inquiry</SelectItem>
+                      </SelectContent>
+                  </Select>
+                </div>
 
-              <div>
-                <label className="block mb-2 font-semibold">Subject *</label>
-                 <Select required>
-                    <SelectTrigger>
-                        <SelectValue placeholder="- Please select -" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="risk-assessment">Risk Assessment</SelectItem>
-                        <SelectItem value="architecture">Architecture</SelectItem>
-                        <SelectItem value="pen-testing">Pen-Testing</SelectItem>
-                        <SelectItem value="training">Training</SelectItem>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                    </SelectContent>
-                </Select>
-              </div>
+                <div>
+                  <label className="block mb-2 font-semibold">Please tell us more! *</label>
+                  <Textarea
+                    rows={5}
+                    required
+                  ></Textarea>
+                </div>
 
-              <div>
-                <label className="block mb-2 font-semibold">Please tell us more! *</label>
-                <Textarea
-                  rows={5}
-                  required
-                ></Textarea>
-              </div>
-
-              <Button
-                type="submit"
-              >
-                Send Message
-              </Button>
-            </form>
-          </section>
+                <Button
+                  type="submit"
+                >
+                  Send Message
+                </Button>
+              </form>
+            </section>
+          </AnimateOnScroll>
 
           {/* Google Map */}
           <section className="p-8 max-w-7xl mx-auto">
