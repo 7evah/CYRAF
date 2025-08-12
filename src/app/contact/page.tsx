@@ -11,7 +11,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Building2, Phone, Mail, Clock } from 'lucide-react';
 import { useState } from "react";
 
-export default function Contact() {
+// Define props to satisfy Next.js page component signature
+interface ContactPageProps {
+  params?: Record<string, string>;
+  searchParams?: Record<string, string | string[] | undefined>;
+}
+
+export default function Contact({}: ContactPageProps) {
   const [demoOpen, setDemoOpen] = useState(false);
 
   return (
