@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -11,13 +12,13 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#sectors", label: "Sectors" },
-    { href: "#product", label: "Product" },
-    { href: "#services", label: "Services" },
-    { href: "#about", label: "About us" },
+    { href: "/", label: "Home" },
+    { href: "/#sectors", label: "Sectors" },
+    { href: "/#product", label: "Product" },
+    { href: "/#services", label: "Services" },
+    { href: "/#about", label: "About us" },
     { href: "#careers", label: "Careers" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import LogoIcon from './cropped-Produit_blue.svg';
+import LogoIcon from './cropped-Produit_blue.png';
 
 export function Logo({ variant = 'default' }: { variant?: 'default' | 'light' }) {
   const textColor = variant === 'light' ? 'text-white' : 'text-gray-900';
