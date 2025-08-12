@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  
   images: {
     remotePatterns: [
       {
@@ -17,6 +18,45 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+        {
+          protocol: 'https',
+          hostname: 'www.getgsi.com',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.compuquip.com',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'govciomediaresearch.imgix.net',
+          pathname: '/**',
+        },
+ {
+ protocol: 'https',
+ hostname: 'www.kiteworks.com',
+ pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'atcbiocides.com',
+          pathname: '/**',
+ },
+ {
+ protocol: 'https',
+ hostname: 'enhanced.io',
+ },
+ {
+ protocol: 'https',
+ hostname: 'www.gadgetaccess.com',
+ },
+ {
+ protocol: 'https',
+ hostname: 'www.hurix.com',
+ }
     ],
   },
   webpack(config) {
