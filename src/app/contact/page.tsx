@@ -17,7 +17,7 @@ interface ContactPageProps {
   searchParams?: Record<string, string | string[] | undefined>;
 }
 
-export default function Contact({}: ContactPageProps) {
+export default function Contact({ params, searchParams }: ContactPageProps) {
   const [demoOpen, setDemoOpen] = useState(false);
 
   return (
