@@ -1,8 +1,8 @@
-import type {Metadata} from 'next';
-import './globals.css';
-import { Toaster } from "@/components/ui/toaster";
+import type { Metadata } from 'next';
 import { I18nProviderClient } from '@/locales/client';
-import { ReactNode } from 'react';
+import { Toaster } from "@/components/ui/toaster";
+import '../globals.css';
+
 
 export const metadata: Metadata = {
   title: 'Cycraf Security',
@@ -13,7 +13,7 @@ export default function RootLayout({
   children,
   params: { locale }
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
   params: { locale: string };
 }>) {
   return (
