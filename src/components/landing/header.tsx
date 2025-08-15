@@ -7,30 +7,18 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { useI18n, useChangeLocale, useCurrentLocale } from "@/locales/client";
-import { Globe } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
 
 export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const t = useI18n();
-  const changeLocale = useChangeLocale();
-  const locale = useCurrentLocale();
 
   const navLinks = [
-    { href: "/", label: t('nav.home') },
-    { href: "/#sectors", label: t('nav.sectors') },
-    { href: "/#product", label: t('nav.product') },
-    { href: "/services", label: t('nav.services') },
-    { href: "/#about", label: t('nav.about') },
-    { href: "#careers", label: t('nav.careers') },
-    { href: "/contact", label: t('nav.contact') },
+    { href: "/", label: "Home" },
+    { href: "/#sectors", label: "Sectors" },
+    { href: "/#product", label: "Product" },
+    { href: "/services", label: "Services" },
+    { href: "/#about", label: "About" },
+    { href: "#careers", label: "Careers" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -47,19 +35,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-            <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Globe className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => changeLocale("en")}>English</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLocale("fr")}>Français</DropdownMenuItem>
-              <DropdownMenuItem onClick={() => changeLocale("ar")}>العربية</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Button onClick={onBookDemoClick} size="sm">{t('nav.book_demo')}</Button>
+          <Button onClick={onBookDemoClick} size="sm">Book a Demo</Button>
         </div>
 
         <div className="md:hidden">
@@ -81,20 +57,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
                       {link.label}
                     </Link>
                   ))}
-                   <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="outline" className="justify-start mt-2">
-                        <Globe className="mr-2 h-5 w-5" />
-                        Language
-                        </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem onClick={() => {changeLocale("en"); setMobileOpen(false);}}>English</DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => {changeLocale("fr"); setMobileOpen(false);}}>Français</DropdownMenuItem>
-                        <DropdownMenuItem onClick={() => {changeLocale("ar"); setMobileOpen(false);}}>العربية</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-                  <Button onClick={() => { onBookDemoClick(); setMobileOpen(false); }} className="mt-2">{t('nav.book_demo')}</Button>
+                  <Button onClick={() => { onBookDemoClick(); setMobileOpen(false); }} className="mt-2">Book a Demo</Button>
                 </div>
               </div>
             </SheetContent>

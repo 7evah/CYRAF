@@ -1,8 +1,6 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
-import { I18nProviderClient } from '@/locales/client';
-import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
   title: 'Cycraf Security',
@@ -11,23 +9,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale }
 }: Readonly<{
-  children: ReactNode;
-  params: { locale: string };
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased bg-gradient-to-b from-gray-50 to-white">
-        <I18nProviderClient locale={locale}>
-          {children}
-          <Toaster />
-        </I18nProviderClient>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
