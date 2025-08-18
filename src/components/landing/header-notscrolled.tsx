@@ -1,3 +1,4 @@
+//header
 "use client";
 
 import { useState } from "react";
@@ -7,7 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Menu } from "lucide-react";
 import { Logo } from "@/components/logo";
 
-export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoClick: () => void; isTransparent?: boolean }) {
+export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
@@ -20,35 +21,23 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
     { href: "/contact", label: "Contact" },
   ];
 
-  // Determine classes based on the isTransparent prop
-  const headerClasses = isTransparent
-    ? 'bg-transparent'
-    : 'backdrop-blur bg-white/70 shadow-sm';
-  
-  const linkColorClass = isTransparent ? 'text-white' : 'text-foreground';
-
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${headerClasses}`}>
+    <header className="sticky top-0 z-50 backdrop-blur bg-white/70 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        
-        {/* This line is updated to pass the correct variant to the Logo */}
-        <Logo variant={isTransparent ? 'light' : 'default'} />
+        <Logo />
 
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm">
           {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
-              href={link.href} 
-              className={`transition-colors hover:text-primary ${linkColorClass}`}
-              style={{ textShadow: isTransparent ? '0 1px 3px rgba(0,0,0,0.3)' : 'none' }}
-            >
+            <Link key={link.href} href={link.href} className="hover:text-primary transition-colors">
               {link.label}
             </Link>
           ))}
         </nav>
+
         <div className="hidden md:flex items-center gap-2">
           <Button onClick={onBookDemoClick} size="sm">Book a Demo</Button>
         </div>
+
         <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>

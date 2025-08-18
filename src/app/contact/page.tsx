@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Header } from "@/components/landing/header";
+import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,7 @@ interface ContactPageProps {
 export default function Contact({ params, searchParams }: ContactPageProps) {
   const [demoOpen, setDemoOpen] = useState(false);
 
+  
   return (
     <div className="min-h-screen font-sans text-foreground bg-background">
       <Header onBookDemoClick={() => setDemoOpen(true)} />
