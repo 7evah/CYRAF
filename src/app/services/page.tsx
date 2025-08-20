@@ -8,7 +8,7 @@ import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { Users, Zap, ArrowRight, Shield, MapPin, Clock } from 'lucide-react';
+import { Search, ShieldCheck, Eye, BellRing, Recycle, ArrowRight } from 'lucide-react';
 import Link from "next/link";
 
 const services = [
@@ -56,6 +56,50 @@ const services = [
     }
 ];
 
+const approachSteps = [
+  {
+    step: "01",
+    title: "Identify",
+    description: "Understand organizational risks to systems, assets, and data.",
+    icon: Search,
+    color: "text-green-500",
+    borderColor: "border-green-500",
+  },
+  {
+    step: "02",
+    title: "Protect",
+    description: "Implement safeguards to ensure delivery of critical services.",
+    icon: ShieldCheck,
+    color: "text-cyan-500",
+    borderColor: "border-cyan-500",
+  },
+  {
+    step: "03",
+    title: "Detect",
+    description: "Discover cybersecurity events in a timely manner.",
+    icon: Eye,
+    color: "text-blue-500",
+    borderColor: "border-blue-500",
+  },
+  {
+    step: "04",
+    title: "Respond",
+    description: "Take appropriate action after a detected incident.",
+    icon: BellRing,
+    color: "text-indigo-500",
+    borderColor: "border-indigo-500",
+  },
+  {
+    step: "05",
+    title: "Recover",
+    description: "Restore any capabilities or services that were impaired.",
+    icon: Recycle,
+    color: "text-purple-500",
+    borderColor: "border-purple-500",
+  },
+];
+
+
 export default function ServicesPage() {
   const [demoOpen, setDemoOpen] = useState(false);
 
@@ -80,49 +124,44 @@ export default function ServicesPage() {
 
         {/* Our Approach Section */}
         <AnimateOnScroll animation="fade-up">
-            <section className="max-w-6xl mx-auto py-16 lg:py-24 px-6 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold">Our Approach</h2>
-                <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4">
-                    Implementing a comprehensive cybersecurity strategy involves a combination of different services tailored to the specific needs and risks of your business. We analyze, design, and maintain robust security postures to protect your most critical assets.
-                </p>
-          
-                <div className="mt-20 w-full max-w-lg mx-auto">
-                    <svg width="100%" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-labelledby="approachTitle approachDesc">
-                        <title id="approachTitle">Our Cyclical Cybersecurity Approach</title>
-                        <desc id="approachDesc">A circular diagram showing four stages: Analyze, Design, Protect, and Monitor.</desc>
-                        
-                        <circle cx="210" cy="210" r="65" fill="hsl(var(--primary))" />
-                        <text x="210" y="205" fontFamily="Inter, sans-serif" fontSize="16" fill="hsl(var(--primary-foreground))" textAnchor="middle" fontWeight="bold">Our</text>
-                        <text x="210" y="225" fontFamily="Inter, sans-serif" fontSize="16" fill="hsl(var(--primary-foreground))" textAnchor="middle" fontWeight="bold">Process</text>
-
-                        <circle cx="210" cy="210" r="150" fill="none" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="10, 10" />
-
-                        <g transform="translate(170, 20)">
-                            <circle cx="40" cy="40" r="40" fill="hsl(var(--muted))" stroke="hsl(var(--border))" />
-                            <Users x="20" y="20" width="40" height="40" stroke="hsl(var(--foreground))" strokeWidth="1.5" />
-                            <text x="40" y="100" fontFamily="Inter, sans-serif" fontSize="14" fill="hsl(var(--foreground))" textAnchor="middle" fontWeight="600">Analyze</text>
-                        </g>
-                        
-                        <g transform="translate(320, 170)">
-                            <circle cx="40" cy="40" r="40" fill="hsl(var(--muted))" stroke="hsl(var(--border))" />
-                            <Zap x="20" y="20" width="40" height="40" stroke="hsl(var(--foreground))" strokeWidth="1.5" />
-                            <text x="40" y="100" fontFamily="Inter, sans-serif" fontSize="14" fill="hsl(var(--foreground))" textAnchor="middle" fontWeight="600">Design</text>
-                        </g>
-
-                        <g transform="translate(170, 320)">
-                            <circle cx="40" cy="40" r="40" fill="hsl(var(--muted))" stroke="hsl(var(--border))" />
-                            <Shield x="20" y="20" width="40" height="40" stroke="hsl(var(--foreground))" strokeWidth="1.5" />
-                            <text x="40" y="100" fontFamily="Inter, sans-serif" fontSize="14" fill="hsl(var(--foreground))" textAnchor="middle" fontWeight="600">Protect</text>
-                        </g>
-
-                        <g transform="translate(20, 170)">
-                            <circle cx="40" cy="40" r="40" fill="hsl(var(--muted))" stroke="hsl(var(--border))" />
-                            <Clock x="20" y="20" width="40" height="40" stroke="hsl(var(--foreground))" strokeWidth="1.5" />
-                            <text x="40" y="100" fontFamily="Inter, sans-serif" fontSize="14" fill="hsl(var(--foreground))" textAnchor="middle" fontWeight="600">Monitor</text>
-                        </g>
-                    </svg>
+            <section className="bg-card/50 py-16 lg:py-24">
+              <div className="max-w-6xl mx-auto px-4">
+                 <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold">Our Approach</h2>
+                    <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4">
+                        Implementing a comprehensive cybersecurity strategy involves a combination of different services tailored to the specific needs and risks of your business. We analyze, design, and maintain robust security postures to protect your most critical assets.
+                    </p>
                 </div>
-          
+
+                {/* Timeline Wrapper */}
+                <div className="relative mb-16">
+                    {/* SVG for desktop timeline */}
+                    <svg className="hidden md:block absolute top-0 left-0 w-full h-full z-0 overflow-visible" viewBox="0 0 1200 200" preserveAspectRatio="none">
+                        <path d="M 120 20 C 240 20, 240 100, 360 100 C 480 160, 480 10, 600 5 C 720 20, 720 160, 840 100 C 960 100, 960 20, 1080 20" stroke="hsl(var(--border))" strokeWidth="2" fill="none" strokeDasharray="5,5"/>
+                        <path d="M 1080 20 L 1140 10 L 1115 20 L 1140 30 Z" fill="hsl(var(--muted-foreground))" />
+                    </svg>
+
+                    {/* Timeline Container */}
+                    <div className="relative w-full py-10 md:flex md:justify-between mobile-timeline-container">
+                        {approachSteps.map((item, index) => {
+                            const Icon = item.icon;
+                            return (
+                                <div key={index} className="timeline-item">
+                                    <div className={`timeline-circle w-20 h-20 rounded-full border-4 bg-background flex items-center justify-center shadow-md ${item.borderColor}`}>
+                                        <Icon className={`w-10 h-10 ${item.color}`} />
+                                    </div>
+                                    <div className="timeline-content mt-4 md:text-center">
+                                        <span className="text-sm font-semibold text-muted-foreground">STEP {item.step}</span>
+                                        <h3 className="text-lg font-bold text-foreground">{item.title}</h3>
+                                        <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Stats Section */}
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
                     <div className="text-center">
                         <div className="text-4xl font-bold text-foreground">10+</div>
@@ -137,6 +176,7 @@ export default function ServicesPage() {
                         <div className="mt-1 text-muted-foreground">Collaborators</div>
                     </div>
                 </div>
+              </div>
             </section>
         </AnimateOnScroll>
 
@@ -150,22 +190,22 @@ export default function ServicesPage() {
                     </div>
                     <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
                         <div className="p-8 rounded-xl border border-gray-700 transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800">
-                            <div className="bg-gray-900 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
-                               <Shield size={32} />
+                            <div className="bg-primary/10 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
+                               <ShieldCheck size={32} className="text-primary" />
                             </div>
                             <h3 className="text-xl font-semibold mt-6">Industry Experts</h3>
                             <p className="text-gray-300 mt-2">Our team comprises certified professionals with decades of experience in the industrial sector.</p>
                         </div>
                         <div className="p-8 rounded-xl border border-gray-700 transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800">
-                            <div className="bg-gray-900 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
-                               <MapPin size={32} />
+                           <div className="bg-primary/10 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                             </div>
                             <h3 className="text-xl font-semibold mt-6">Tailored Solutions</h3>
                             <p className="text-gray-300 mt-2">We don't use a one-size-fits-all approach. Every solution is customized to your unique environment.</p>
                         </div>
                         <div className="p-8 rounded-xl border border-gray-700 transition-all duration-300 hover:-translate-y-2 bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800">
-                            <div className="bg-gray-900 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
-                                <Zap size={32} />
+                             <div className="bg-primary/10 h-16 w-16 rounded-full mx-auto flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>
                             </div>
                             <h3 className="text-xl font-semibold mt-6">24/7 Proactive Support</h3>
                             <p className="text-gray-300 mt-2">Our Security Operations Center is always on, monitoring threats before they can impact you.</p>
