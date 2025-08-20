@@ -3,7 +3,7 @@
 import { useState, useEffect, type ReactNode } from "react";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
-import { Services } from "@/components/landing/services";
+import { SwiperServices } from "@/components/landing/swiper-services";
 import { Sectors } from "@/components/landing/sectors";
 import { Platform } from "@/components/landing/platform";
 import { Values } from "@/components/landing/values";
@@ -69,7 +69,7 @@ export default function Home() {
             </DemoButton>
           } 
         />
-        <AnimateOnScroll animation="fade-up"><Services /></AnimateOnScroll>
+        <AnimateOnScroll animation="fade-up"><SwiperServices /></AnimateOnScroll>
         <AnimateOnScroll animation="fade-up"><Sectors /></AnimateOnScroll>
         <AnimateOnScroll animation="fade-up"><Platform demoButton={<DemoButton>Book a demo</DemoButton>} /></AnimateOnScroll>
         <AnimateOnScroll animation="fade-up"><Values /></AnimateOnScroll>

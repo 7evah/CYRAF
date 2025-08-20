@@ -27,6 +27,11 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
   
   const linkColorClass = isTransparent ? 'text-white' : 'text-foreground';
 
+  // Determine button classes based on the isTransparent prop
+  const buttonClasses = isTransparent
+    ? 'shadow hover:translate-y-[-2px] transition-transform bg-cyan-600 hover:bg-cyan-700 text-white'
+    : ''; // Default button styling will be applied by shadcn/ui's Button component
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${headerClasses}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -47,7 +52,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
-          <Button onClick={onBookDemoClick} size="sm">Book a Demo</Button>
+          <Button onClick={onBookDemoClick} size="sm" className={buttonClasses}>Book a Demo</Button>
         </div>
         <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>

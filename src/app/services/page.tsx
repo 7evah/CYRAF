@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Image from 'next/image';
-import { Header } from "@/components/landing/header";
+import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
@@ -85,7 +85,7 @@ export default function ServicesPage() {
                 <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4">
                     Implementing a comprehensive cybersecurity strategy involves a combination of different services tailored to the specific needs and risks of your business. We analyze, design, and maintain robust security postures to protect your most critical assets.
                 </p>
-
+          
                 <div className="mt-20 w-full max-w-lg mx-auto">
                     <svg width="100%" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-labelledby="approachTitle approachDesc">
                         <title id="approachTitle">Our Cyclical Cybersecurity Approach</title>
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                         </g>
                     </svg>
                 </div>
-
+          
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
                     <div className="text-center">
                         <div className="text-4xl font-bold text-foreground">10+</div>
