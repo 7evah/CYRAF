@@ -1,8 +1,9 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from 'next/image';
+import CountUp from 'react-countup';
 import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
@@ -160,23 +161,41 @@ export default function ServicesPage() {
                         })}
                     </div>
                 </div>
-
+                <br />
                 {/* Stats Section */}
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-foreground">10+</div>
+                <div className="mt-17 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div className="text-center">
+                        <div className="text-4xl font-bold text-foreground">
+                            <CountUp
+                                end={10}
+                                duration={2.5}
+                                enableScrollSpy
+                                scrollSpyOnce
+                                suffix="+"
+                            />
+                        </div>
                         <div className="mt-1 text-muted-foreground">Satisfied Customers</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-4xl font-bold text-foreground">15+</div>
+                        <div className="text-4xl font-bold text-foreground">
+                             <CountUp
+                                end={15}
+                                duration={2.5}
+                                enableScrollSpy
+                                scrollSpyOnce
+                                suffix="+"
+                            />
+                        </div>
                         <div className="mt-1 text-muted-foreground">Assessed Projects</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-4xl font-bold text-foreground">22+</div>
+                        <div className="text-4xl font-bold text-foreground">
+                             <CountUp end={22} duration={2.5} enableScrollSpy scrollSpyOnce suffix="+" />
+                        </div>
                         <div className="mt-1 text-muted-foreground">Collaborators</div>
                     </div>
-                </div>
               </div>
+            </div>
             </section>
         </AnimateOnScroll>
 

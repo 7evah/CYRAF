@@ -26,7 +26,7 @@ export function DemoModal({ isOpen, onOpenChange }: { isOpen: boolean; onOpenCha
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md demo-modal-size">
         <DialogHeader>
           <DialogTitle>Book a Demo</DialogTitle>
           <DialogDescription>

@@ -145,6 +145,10 @@
 }
 
 @media (max-width: 767px) {
+    .demo-modal-size {
+        max-width: 85%;
+        border-radius: 1rem;
+    }
     .mobile-timeline-container {
         @apply flex flex-col items-start pl-5 relative;
     }

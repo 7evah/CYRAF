@@ -6,7 +6,7 @@ const servicesData = [
       img: "https://www.getgsi.com/hubfs/GSI%20Website%20Assets/Cybersecurity%20Assessments.png",
       hint: "security audit",
       title: "Cybersecurity Risk Assessment",
-      text: "Identify vulnerabilities and quantify risks to prioritize security investments."
+      text: "Identify vulnerabilities and quantify risks to prioritize security investments wisely and effectively."
     },
     {
       img: "https://www.compuquip.com/hubfs/images/blog-images/building-a-strong-enterprise-security-architecture-framework.jpg",
