@@ -29,6 +29,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
         { href: "/services/security-architecture-design", label: "Security Architecture Design" },
         { href: "/services/compliance-regulatory-advisory", label: "Compliance & Regulatory Advisory" },
+        { href: "/services/cybersecurity-implementation", label: "Cybersecurity Implementation" },
       ],
     },
     { href: "/#about", label: "About" },
@@ -168,5 +169,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
     </header>
   );
 }
+
+    
 
     

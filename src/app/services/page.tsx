@@ -35,7 +35,7 @@ const services = [
       category: "FIREWALL CONFIGURATION",
       title: "Cybersecurity Implementation",
       description: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection.",
-      href: "#"
+      href: "/services/cybersecurity-implementation"
     },
     {
       img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600",
@@ -290,5 +290,7 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    
 
     

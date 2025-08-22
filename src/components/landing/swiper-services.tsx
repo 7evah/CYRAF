@@ -31,7 +31,7 @@ const servicesData = [
     hint: "firewall configuration",
     title: "Cybersecurity Implementation",
     text: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection.",
-    href: "#"
+    href: "/services/cybersecurity-implementation"
   },
   {
     img: "https://www.kiteworks.com/wp-content/uploads/2022/01/Third-party-risk-management-glossary.webp",
@@ -168,5 +168,6 @@ export function SwiperServices() {
     </>
   );
 }
+    
 
     
