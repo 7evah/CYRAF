@@ -59,7 +59,7 @@ const servicesData = [
     hint: "team training",
     title: "Cybersecurity Training",
     text: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls.",
-    href: "#"
+    href: "/services/cybersecurity-training"
   },
   {
     img: "https://www.hurix.com/wp-content/uploads/2022/05/penetration-1.jpg",

@@ -69,12 +69,12 @@ const services = [
       href: "/services/vulnerability-management"
     },
     {
-      img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
-      hint: "system lifecycle",
-      category: "SYSTEM LIFECYCLE",
-      title: "Operation & Maintenance",
-      description: "Ensure optimal performance, security, and compliance of IACS throughout their entire lifecycle.",
-      href: "#"
+      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
+      hint: "team training",
+      category: "TEAM TRAINING",
+      title: "Cybersecurity Training",
+      description: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls.",
+      href: "/services/cybersecurity-training"
     }
 ];
 
