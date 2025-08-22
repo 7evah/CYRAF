@@ -7,7 +7,7 @@ import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { Layers, Shield, DollarSign, FileText, CheckCircle, BarChart, Wifi, Blocks, ShieldCheck } from "lucide-react";
+import { Layers, Shield, DollarSign, FileText, CheckCircle, BarChart, Wifi, Blocks, ShieldCheck, Cloud, ClipboardCheck } from "lucide-react";
 
 export default function SecurityArchitectureDesignPage() {
   const [demoOpen, setDemoOpen] = useState(false);
@@ -94,6 +94,8 @@ export default function SecurityArchitectureDesignPage() {
                             <div className="bg-muted/50 p-6 rounded-lg border"><h3 className="font-semibold text-lg flex items-center gap-2"><ShieldCheck className="text-primary"/>Zero Trust Model</h3></div>
                             <div className="bg-muted/50 p-6 rounded-lg border"><h3 className="font-semibold text-lg flex items-center gap-2"><BarChart className="text-primary"/>Risk-Based Approach</h3></div>
                             <div className="bg-muted/50 p-6 rounded-lg border"><h3 className="font-semibold text-lg flex items-center gap-2"><Blocks className="text-primary"/>Secure by Design</h3></div>
+                            <div className="bg-muted/50 p-6 rounded-lg border"><h3 className="font-semibold text-lg flex items-center gap-2"><ClipboardCheck className="text-primary"/>Compliance-Driven Security</h3></div>
+                            <div className="bg-muted/50 p-6 rounded-lg border"><h3 className="font-semibold text-lg flex items-center gap-2"><Cloud className="text-primary"/>Cloud Security Framework</h3></div>
                         </div>
                     </article>
                 </AnimateOnScroll>
@@ -150,6 +152,3 @@ export default function SecurityArchitectureDesignPage() {
     </div>
   );
 }
-
-
-    
