@@ -58,7 +58,7 @@ const services = [
       category: "HACKER CODE",
       title: "Penetration Testing",
       description: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses.",
-      href: "#"
+      href: "/services/penetration-testing"
     },
     {
       img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
