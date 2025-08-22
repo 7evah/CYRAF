@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,49 +16,57 @@ const servicesData = [
     img: "https://www.getgsi.com/hubfs/GSI%20Website%20Assets/Cybersecurity%20Assessments.png",
     hint: "security audit",
     title: "Cybersecurity Risk Assessment",
-    text: "Identify vulnerabilities and quantify risks to prioritize security investments wisely and effectively."
+    text: "Identify vulnerabilities and quantify risks to prioritize security investments wisely and effectively.",
+    href: "/services/cybersecurity-risk-assessment"
   },
   {
     img: "https://www.compuquip.com/hubfs/images/blog-images/building-a-strong-enterprise-security-architecture-framework.jpg",
     hint: "network diagram",
     title: "Security Architecture Design",
-    text: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth."
+    text: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth.",
+    href: "#"
   },
   {
     img: "https://govciomediaresearch.imgix.net/wp-content/uploads/2023/05/1000x650px_new_measures_put_cybersecurity_shutterstock_2137304159.jpg",
     hint: "firewall configuration",
     title: "Cybersecurity Implementation",
-    text: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection."
+    text: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection.",
+    href: "#"
   },
   {
     img: "https://www.kiteworks.com/wp-content/uploads/2022/01/Third-party-risk-management-glossary.webp",
     hint: "vendor security",
     title: "Third-Party Risk Management",
-    text: "Assess and manage cybersecurity risks associated with your third-party vendors and partners."
+    text: "Assess and manage cybersecurity risks associated with your third-party vendors and partners.",
+    href: "#"
   },
   {
     img: "https://atcbiocides.com/wp-content/uploads/2021/11/regulatory-compliance.jpg",
     hint: "compliance checklist",
     title: "Compliance and Regulatory Advisory",
-    text: "Ensure your business meets critical industry standards and data protection regulations."
+    text: "Ensure your business meets critical industry standards and data protection regulations.",
+    href: "#"
   },
   {
     img: "https://enhanced.io/wp-content/uploads/2023/03/risk-based-vul-management.jpg",
     hint: "system scan",
     title: "Vulnerability Management",
-    text: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks."
+    text: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks.",
+    href: "#"
   },
   {
     img: "https://www.gadgetaccess.com/wp-content/uploads/2023/08/training2-1024x587.jpg",
     hint: "team training",
     title: "Cybersecurity Training",
-    text: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls."
+    text: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls.",
+    href: "#"
   },
   {
     img: "https://www.hurix.com/wp-content/uploads/2022/05/penetration-1.jpg",
     hint: "hacker code",
     title: "Penetration Testing",
-    text: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses."
+    text: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses.",
+    href: "#"
   }
 ];
 
@@ -142,7 +151,7 @@ export function SwiperServices() {
   </p>
   <div className="card-footer mt-auto pt-4">
     <Link
-      href="#"
+      href={service.href}
       className="card-link inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
     >
       See More <ArrowRight size={16} />
