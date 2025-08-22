@@ -35,30 +35,42 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
         <Logo />
 
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm">
-          {navLinks.map((link) => (
-             link.isDropdown ? (
-              <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger asChild>
-                  <Link href={link.href} className="flex items-center gap-1 hover:text-primary transition-colors">
-                    {link.label}
-                    <ChevronDown className="h-4 w-4" />
-                  </Link>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {link.dropdownItems?.map(item => (
-                    <DropdownMenuItem key={item.href} asChild>
-                      <Link href={item.href}>{item.label}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-            <Link key={link.href} href={link.href} className="hover:text-primary transition-colors">
-              {link.label}
-            </Link>
-            )
+  {navLinks.map((link) =>
+    link.isDropdown ? (
+      <DropdownMenu key={link.label}>
+        <div className="flex items-center gap-1">
+          <Link
+            href={link.href}
+            className="hover:text-primary transition-colors"
+          >
+            {link.label}
+          </Link>
+          <DropdownMenuTrigger asChild>
+            <button className="hover:text-primary transition-colors">
+              <ChevronDown className="h-4 w-4" />
+            </button>
+          </DropdownMenuTrigger>
+        </div>
+        <DropdownMenuContent>
+          {link.dropdownItems?.map((item) => (
+            <DropdownMenuItem key={item.href} asChild>
+              <Link href={item.href}>{item.label}</Link>
+            </DropdownMenuItem>
           ))}
-        </nav>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    ) : (
+      <Link
+        key={link.href}
+        href={link.href}
+        className="hover:text-primary transition-colors"
+      >
+        {link.label}
+      </Link>
+    )
+  )}
+</nav>
+
 
         <div className="hidden md:flex items-center gap-2">
           <Button onClick={onBookDemoClick} size="sm">Book a Demo</Button>

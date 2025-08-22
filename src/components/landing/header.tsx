@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -21,9 +20,14 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
     { href: "/", label: "Home" },
     { href: "/#sectors", label: "Sectors" },
     { href: "/#product", label: "Product" },
-    { href: "/services", label: "Services", isDropdown: true, dropdownItems: [
+    {
+      href: "/services",
+      label: "Services",
+      isDropdown: true,
+      dropdownItems: [
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
-    ]},
+      ],
+    },
     { href: "/#about", label: "About" },
     { href: "#careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
@@ -46,20 +50,30 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
         <Logo variant={isTransparent ? 'light' : 'default'} />
 
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm">
-          {navLinks.map((link) => (
+          {navLinks.map((link) =>
             link.isDropdown ? (
               <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger asChild>
-                  <button 
-                    className={`flex items-center gap-1 transition-colors hover:text-primary ${linkColorClass}`}
+                <div className="flex items-center gap-1">
+                  {/* Services is now clickable */}
+                  <Link
+                    href={link.href}
+                    className={`transition-colors hover:text-primary ${linkColorClass}`}
                     style={{ textShadow: isTransparent ? '0 1px 3px rgba(0,0,0,0.3)' : 'none' }}
                   >
                     {link.label}
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                </DropdownMenuTrigger>
+                  </Link>
+                  {/* Arrow only triggers dropdown */}
+                  <DropdownMenuTrigger asChild>
+                    <button
+                      className={`flex items-center transition-colors hover:text-primary ${linkColorClass}`}
+                      style={{ textShadow: isTransparent ? '0 1px 3px rgba(0,0,0,0.3)' : 'none' }}
+                    >
+                      <ChevronDown className="h-4 w-4" />
+                    </button>
+                  </DropdownMenuTrigger>
+                </div>
                 <DropdownMenuContent>
-                  {link.dropdownItems?.map(item => (
+                  {link.dropdownItems?.map((item) => (
                     <DropdownMenuItem key={item.href} asChild>
                       <Link href={item.href}>{item.label}</Link>
                     </DropdownMenuItem>
@@ -67,20 +81,24 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link 
-                key={link.href} 
-                href={link.href} 
+              <Link
+                key={link.href}
+                href={link.href}
                 className={`transition-colors hover:text-primary ${linkColorClass}`}
                 style={{ textShadow: isTransparent ? '0 1px 3px rgba(0,0,0,0.3)' : 'none' }}
               >
                 {link.label}
               </Link>
             )
-          ))}
+          )}
         </nav>
+
         <div className="hidden md:flex items-center gap-2">
-          <Button onClick={onBookDemoClick} size="sm" className={buttonClasses}>Book a Demo</Button>
+          <Button onClick={onBookDemoClick} size="sm" className={buttonClasses}>
+            Book a Demo
+          </Button>
         </div>
+
         <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
@@ -95,25 +113,49 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
               <div className="p-6">
                 <Logo />
                 <div className="mt-8 flex flex-col gap-4">
-                  {navLinks.map((link) => (
+                  {navLinks.map((link) =>
                     link.isDropdown ? (
-                        <div key={link.label}>
-                            <span className="font-semibold">{link.label}</span>
-                            <div className="flex flex-col gap-2 mt-2 pl-4">
-                                {link.dropdownItems?.map(item => (
-                                     <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)} className="hover:text-primary transition-colors">
-                                        {item.label}
-                                     </Link>
-                                ))}
-                            </div>
-                        </div>
-                    ) : (
-                        <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="hover:text-primary transition-colors">
-                            {link.label}
+                      <div key={link.label}>
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="font-semibold hover:text-primary transition-colors"
+                        >
+                          {link.label}
                         </Link>
+                        <div className="flex flex-col gap-2 mt-2 pl-4">
+                          {link.dropdownItems?.map((item) => (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => setMobileOpen(false)}
+                              className="hover:text-primary transition-colors"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="hover:text-primary transition-colors"
+                      >
+                        {link.label}
+                      </Link>
                     )
-                  ))}
-                  <Button onClick={() => { onBookDemoClick(); setMobileOpen(false); }} className="mt-2">Book a Demo</Button>
+                  )}
+                  <Button
+                    onClick={() => {
+                      onBookDemoClick();
+                      setMobileOpen(false);
+                    }}
+                    className="mt-2"
+                  >
+                    Book a Demo
+                  </Button>
                 </div>
               </div>
             </SheetContent>
