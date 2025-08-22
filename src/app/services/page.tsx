@@ -13,69 +13,69 @@ import { Search, ShieldCheck, Eye, BellRing, Recycle, ArrowRight } from 'lucide-
 import Link from "next/link";
 
 const services = [
-    {
-      img: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=600",
-      hint: "security audit",
-      category: "SECURITY AUDIT",
-      title: "Cybersecurity Risk Assessment",
-      description: "Identify vulnerabilities and quantify risks to prioritize security investments.",
-      href: "/services/cybersecurity-risk-assessment"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1544256718-3bcf237f3974?auto=format&fit=crop&q=80&w=600",
-      hint: "network diagram",
-      category: "NETWORK DIAGRAM",
-      title: "Security Architecture Design",
-      description: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth.",
-      href: "/services/security-architecture-design"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=600",
-      hint: "firewall configuration",
-      category: "FIREWALL CONFIGURATION",
-      title: "Cybersecurity Implementation",
-      description: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection.",
-      href: "/services/cybersecurity-implementation"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=600",
-      hint: "vendor security",
-      category: "VENDOR SECURITY",
-      title: "Third-Party Risk Management",
-      description: "Assess and manage cybersecurity risks associated with your third-party vendors and partners.",
-      href: "/services/third-party-risk-management"
-    },
-    {
-      img: "https://atcbiocides.com/wp-content/uploads/2021/11/regulatory-compliance.jpg",
-      hint: "compliance checklist",
-      title: "Compliance and Regulatory Advisory",
-      description: "Ensure your business meets critical industry standards and data protection regulations.",
-      href: "/services/compliance-regulatory-advisory"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1614064548237-096537d54648?auto=format&fit=crop&q=80&w=600",
-      hint: "hacker code",
-      category: "HACKER CODE",
-      title: "Penetration Testing",
-      description: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses.",
-      href: "/services/penetration-testing"
-    },
-    {
-      img: "https://enhanced.io/wp-content/uploads/2023/03/risk-based-vul-management.jpg",
-      hint: "system scan",
-      category: "SYSTEM SCAN",
-      title: "Vulnerability Management",
-      description: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks.",
-      href: "/services/vulnerability-management"
-    },
-    {
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600",
-      hint: "team training",
-      category: "TEAM TRAINING",
-      title: "Cybersecurity Training",
-      description: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls.",
-      href: "/services/cybersecurity-training"
-    }
+  {
+    img: "https://www.getgsi.com/hubfs/GSI%20Website%20Assets/Cybersecurity%20Assessments.png",
+    hint: "security audit",
+    title: "Cybersecurity Risk Assessment",
+    text: "Identify vulnerabilities and quantify risks to prioritize security investments wisely and effectively.",
+    href: "/services/cybersecurity-risk-assessment"
+  },
+  {
+    img: "https://www.compuquip.com/hubfs/images/blog-images/building-a-strong-enterprise-security-architecture-framework.jpg",
+    hint: "network diagram",
+    title: "Security Architecture Design",
+    text: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth.",
+    href: "/services/security-architecture-design"
+  },
+  {
+    img: "https://govciomediaresearch.imgix.net/wp-content/uploads/2023/05/1000x650px_new_measures_put_cybersecurity_shutterstock_2137304159.jpg",
+    hint: "firewall configuration",
+    title: "Cybersecurity Implementation",
+    text: "Implement & update protective measures such as encryption, firewalls, authentication, and intrusion detection.",
+    href: "/services/cybersecurity-implementation"
+  },
+  {
+    img: "https://www.kiteworks.com/wp-content/uploads/2022/01/Third-party-risk-management-glossary.webp",
+    hint: "vendor security",
+    title: "Third-Party Risk Management",
+    text: "Assess and manage cybersecurity risks associated with your third-party vendors and partners.",
+    href: "/services/third-party-risk-management"
+  },
+  {
+    img: "https://atcbiocides.com/wp-content/uploads/2021/11/regulatory-compliance.jpg",
+    hint: "compliance checklist",
+    title: "Compliance and Regulatory Advisory",
+    text: "Ensure your business meets critical industry standards and data protection regulations.",
+    href: "/services/compliance-regulatory-advisory"
+  },
+  {
+    img: "https://enhanced.io/wp-content/uploads/2023/03/risk-based-vul-management.jpg",
+    hint: "system scan",
+    title: "Vulnerability Management",
+    text: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks.",
+    href: "/services/vulnerability-management"
+  },
+  {
+    img: "https://www.gadgetaccess.com/wp-content/uploads/2023/08/training2-1024x587.jpg",
+    hint: "team training",
+    title: "Cybersecurity Training",
+    text: "Provide on-site and remote training to improve IACS cybersecurity knowledge and build human firewalls.",
+    href: "/services/cybersecurity-training"
+  },
+  {
+    img: "https://www.hurix.com/wp-content/uploads/2022/05/penetration-1.jpg",
+    hint: "hacker code",
+    title: "Penetration Testing",
+    text: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses.",
+    href: "/services/penetration-testing"
+  },
+  {
+    img: "https://cyberpedia.reasonlabs.com/IMG/on-going%20maintenance.jpg",
+    hint: "system lifecycle",
+    title: "Operation & Maintenance",
+    text: "Ensure optimal performance, security, and compliance of IACS throughout their entire lifecycle.",
+    href: "/services/Operation-&-Maintenance"
+  } 
 ];
 
 const approachSteps = [
@@ -267,9 +267,9 @@ export default function ServicesPage() {
                         <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out border border-border flex flex-col">
                             <Image src={service.img} alt={service.title} className="w-full h-48 object-cover" width={600} height={400} data-ai-hint={service.hint} />
                             <div className="p-6 flex flex-col flex-grow">
-                                <span className="text-muted-foreground uppercase text-xs font-semibold tracking-wider">{service.category}</span>
+                                <span className="text-muted-foreground uppercase text-xs font-semibold tracking-wider">{service.hint}</span>
                                 <h4 className="text-xl font-semibold mt-2">{service.title}</h4>
-                                <p className="mt-2 text-muted-foreground text-sm">{service.description}</p>
+                                <p className="mt-2 text-muted-foreground text-sm">{service.text}</p>
                                 <Link href={service.href} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline mt-auto pt-4">
                                     See More
                                     <ArrowRight size={16} />

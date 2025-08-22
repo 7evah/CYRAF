@@ -60,7 +60,10 @@ const nextConfig: NextConfig = {
  {
  protocol: 'https',
  hostname: 'www.hurix.com',
- }
+ }, {
+  protocol: 'https',
+  hostname: 'cyberpedia.reasonlabs.com',
+  }
     ],
   },
   webpack(config) {
