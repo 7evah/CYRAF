@@ -61,6 +61,14 @@ const services = [
       href: "/services/penetration-testing"
     },
     {
+      img: "https://enhanced.io/wp-content/uploads/2023/03/risk-based-vul-management.jpg",
+      hint: "system scan",
+      category: "SYSTEM SCAN",
+      title: "Vulnerability Management",
+      description: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks.",
+      href: "/services/vulnerability-management"
+    },
+    {
       img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=600",
       hint: "system lifecycle",
       category: "SYSTEM LIFECYCLE",
@@ -290,9 +298,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
-    
-
-    
-
-    

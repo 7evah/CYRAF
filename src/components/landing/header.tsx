@@ -32,6 +32,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
         { href: "/services/cybersecurity-implementation", label: "Cybersecurity Implementation" },
         { href: "/services/third-party-risk-management", label: "Third-Party Risk Management" },
         { href: "/services/penetration-testing", label: "Penetration Testing" },
+        { href: "/services/vulnerability-management", label: "Vulnerability Management" },
       ],
     },
     { href: "/#about", label: "About" },
@@ -171,9 +172,3 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
     </header>
   );
 }
-
-    
-
-    
-
-    

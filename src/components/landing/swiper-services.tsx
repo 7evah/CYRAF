@@ -52,7 +52,7 @@ const servicesData = [
     hint: "system scan",
     title: "Vulnerability Management",
     text: "Continuously identify, classify, and remediate potential weaknesses in your systems and networks.",
-    href: "#"
+    href: "/services/vulnerability-management"
   },
   {
     img: "https://www.gadgetaccess.com/wp-content/uploads/2023/08/training2-1024x587.jpg",
@@ -168,8 +168,3 @@ export function SwiperServices() {
     </>
   );
 }
-    
-
-    
-
-    

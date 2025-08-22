@@ -112,23 +112,38 @@ export default function PenetrationTestingPage() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-8 rounded-lg mt-12">
-                <h3 className="text-2xl font-bold mb-6">Key Benefits</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Improved Security Posture",
-                    "Regulatory Compliance",
-                    "Increased Awareness",
-                    "Protect Business & Users",
-                    "Avoid Financial Losses"
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <Check className="flex-shrink-0 h-5 w-5 text-green-400" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <br />
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 text-white p-8 rounded-lg">
+  <h3 className="text-2xl font-bold mb-6">Empowering You To...</h3>
+  <ul className="space-y-4">
+    {[
+      "Improved Security Posture",
+      "Regulatory Compliance",
+      "Increased Awareness",
+      "Protect Business & Users",
+      "Avoid Financial Losses"
+    ].map((item) => (
+      <li key={item} className="flex items-center gap-3">
+        <svg
+          className="flex-shrink-0 h-5 w-5 text-gray-300"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+        {item}
+      </li>
+    ))}
+  </ul>
+</div>
             </AnimateOnScroll>
           </aside>
         </div>
