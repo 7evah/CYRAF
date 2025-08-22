@@ -45,7 +45,7 @@ const servicesData = [
     hint: "compliance checklist",
     title: "Compliance and Regulatory Advisory",
     text: "Ensure your business meets critical industry standards and data protection regulations.",
-    href: "#"
+    href: "/services/compliance-regulatory-advisory"
   },
   {
     img: "https://enhanced.io/wp-content/uploads/2023/03/risk-based-vul-management.jpg",

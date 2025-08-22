@@ -24,6 +24,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
     { href: "/services", label: "Services", isDropdown: true, dropdownItems: [
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
         { href: "/services/security-architecture-design", label: "Security Architecture Design" },
+        { href: "/services/compliance-regulatory-advisory", label: "Compliance & Regulatory Advisory" },
     ]},
     { href: "/#about", label: "About" },
     { href: "#careers", label: "Careers" },

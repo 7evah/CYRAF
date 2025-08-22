@@ -46,6 +46,13 @@ const services = [
       href: "#"
     },
     {
+      img: "https://atcbiocides.com/wp-content/uploads/2021/11/regulatory-compliance.jpg",
+      hint: "compliance checklist",
+      title: "Compliance and Regulatory Advisory",
+      description: "Ensure your business meets critical industry standards and data protection regulations.",
+      href: "/services/compliance-regulatory-advisory"
+    },
+    {
       img: "https://images.unsplash.com/photo-1614064548237-096537d54648?auto=format&fit=crop&q=80&w=600",
       hint: "hacker code",
       category: "HACKER CODE",

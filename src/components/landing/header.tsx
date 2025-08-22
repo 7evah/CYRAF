@@ -28,6 +28,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
       dropdownItems: [
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
         { href: "/services/security-architecture-design", label: "Security Architecture Design" },
+        { href: "/services/compliance-regulatory-advisory", label: "Compliance & Regulatory Advisory" },
       ],
     },
     { href: "/#about", label: "About" },
