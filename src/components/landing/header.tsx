@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -26,6 +27,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
       isDropdown: true,
       dropdownItems: [
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
+        { href: "/services/security-architecture-design", label: "Security Architecture Design" },
       ],
     },
     { href: "/#about", label: "About" },
@@ -165,3 +167,5 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
     </header>
   );
 }
+
+    

@@ -27,7 +27,7 @@ const services = [
       category: "NETWORK DIAGRAM",
       title: "Security Architecture Design",
       description: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth.",
-      href: "#"
+      href: "/services/security-architecture-design"
     },
     {
       img: "https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=600",
@@ -283,3 +283,5 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    

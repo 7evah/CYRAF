@@ -24,7 +24,7 @@ const servicesData = [
     hint: "network diagram",
     title: "Security Architecture Design",
     text: "Design secure IT/OT infrastructure to protect against threats using different approaches like Defense-in-Depth.",
-    href: "#"
+    href: "/services/security-architecture-design"
   },
   {
     img: "https://govciomediaresearch.imgix.net/wp-content/uploads/2023/05/1000x650px_new_measures_put_cybersecurity_shutterstock_2137304159.jpg",
@@ -168,3 +168,5 @@ export function SwiperServices() {
     </>
   );
 }
+
+    

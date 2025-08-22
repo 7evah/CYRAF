@@ -23,6 +23,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
     { href: "/#product", label: "Product" },
     { href: "/services", label: "Services", isDropdown: true, dropdownItems: [
         { href: "/services/cybersecurity-risk-assessment", label: "Cybersecurity Risk Assessment" },
+        { href: "/services/security-architecture-design", label: "Security Architecture Design" },
     ]},
     { href: "/#about", label: "About" },
     { href: "#careers", label: "Careers" },
@@ -118,3 +119,5 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
     </header>
   );
 }
+
+    
