@@ -34,6 +34,7 @@ export function Header({ onBookDemoClick, isTransparent = false }: { onBookDemoC
         { href: "/services/penetration-testing", label: "Penetration Testing" },
         { href: "/services/vulnerability-management", label: "Vulnerability Management" },
         { href: "/services/cybersecurity-training", label: "Cybersecurity Training" },
+        { href: "/services/operation-and-maintenance", label: "Operation & Maintenance" },
       ],
     },
     { href: "/#about", label: "About" },

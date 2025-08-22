@@ -74,7 +74,7 @@ const services = [
     hint: "system lifecycle",
     title: "Operation & Maintenance",
     text: "Ensure optimal performance, security, and compliance of IACS throughout their entire lifecycle.",
-    href: "/services/Operation-&-Maintenance"
+    href: "/services/operation-and-maintenance"
   } 
 ];
 

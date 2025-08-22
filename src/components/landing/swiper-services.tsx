@@ -67,6 +67,13 @@ const servicesData = [
     title: "Penetration Testing",
     text: "Simulate real-world cyber attacks (white/grey box) to identify and address security weaknesses.",
     href: "/services/penetration-testing"
+  },
+  {
+    img: "https://cyberpedia.reasonlabs.com/IMG/on-going%20maintenance.jpg",
+    hint: "system lifecycle",
+    title: "Operation & Maintenance",
+    text: "Ensure optimal performance, security, and compliance of IACS throughout their entire lifecycle.",
+    href: "/services/operation-and-maintenance"
   }
 ];
 
