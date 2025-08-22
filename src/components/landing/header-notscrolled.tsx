@@ -26,6 +26,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
         { href: "/services/security-architecture-design", label: "Security Architecture Design" },
         { href: "/services/compliance-regulatory-advisory", label: "Compliance & Regulatory Advisory" },
         { href: "/services/cybersecurity-implementation", label: "Cybersecurity Implementation" },
+        { href: "/services/third-party-risk-management", label: "Third-Party Risk Management" },
     ]},
     { href: "/#about", label: "About" },
     { href: "#careers", label: "Careers" },
@@ -121,6 +122,8 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
     </header>
   );
 }
+
+    
 
     
 

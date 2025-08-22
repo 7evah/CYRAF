@@ -43,7 +43,7 @@ const services = [
       category: "VENDOR SECURITY",
       title: "Third-Party Risk Management",
       description: "Assess and manage cybersecurity risks associated with your third-party vendors and partners.",
-      href: "#"
+      href: "/services/third-party-risk-management"
     },
     {
       img: "https://atcbiocides.com/wp-content/uploads/2021/11/regulatory-compliance.jpg",
@@ -290,6 +290,8 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    
 
     
 
