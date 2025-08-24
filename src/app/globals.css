@@ -163,3 +163,40 @@
         @apply text-left;
     }
 }
+
+.sectors-timeline-line {
+    @apply absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-border;
+}
+
+.sectors-timeline-item {
+    @apply relative flex justify-between items-center mb-16;
+}
+
+.sectors-timeline-content {
+    @apply w-[calc(50%-2rem)];
+}
+
+.sectors-timeline-node {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-background border-4 border-border rounded-full z-10;
+}
+
+@media (max-width: 768px) {
+    .sectors-timeline-line {
+        @apply left-5 translate-x-0;
+    }
+    .sectors-timeline-item {
+        @apply flex-col items-start gap-6 mb-12;
+    }
+    .sectors-timeline-item:nth-child(odd) .sectors-timeline-content:first-child {
+        @apply order-2;
+    }
+    .sectors-timeline-content {
+        @apply w-full !m-0 pl-12 text-left !important;
+    }
+    .timeline-item:nth-child(even) .timeline-content:last-child {
+        order: 2;
+    }
+    .sectors-timeline-node {
+        @apply left-[1.1rem] top-20 translate-y-0;
+    }
+}
