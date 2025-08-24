@@ -63,6 +63,9 @@ const nextConfig: NextConfig = {
  }, {
   protocol: 'https',
   hostname: 'cyberpedia.reasonlabs.com',
+  }, {
+    protocol: 'https',
+    hostname: 'www.itsasap.com',
   }
     ],
   },
