@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -37,7 +38,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
         { href: "/services/operation-and-maintenance", label: "Operation & Maintenance" },
       ],
     },
-    { href: "/#about", label: "About" },
+    { href: "/about", label: "About" },
     { href: "#careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
   ];
