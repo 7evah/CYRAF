@@ -16,7 +16,6 @@ As a boutique firm, Cyraf delivers a tailored, high-touch approach to cybersecur
             Learn more about our mission
           </Link>
         </div>
-
         <div className="rounded-lg overflow-hidden shadow-lg">
           <Image src={aboutpic} alt="our team in a meeting" width={600} height={400} className="w-full h-auto object-cover" data-ai-hint="team meeting" />
         </div>

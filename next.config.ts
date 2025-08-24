@@ -66,6 +66,11 @@ const nextConfig: NextConfig = {
   }, {
     protocol: 'https',
     hostname: 'www.itsasap.com',
+    
+  },{
+    protocol: 'https',
+    hostname: 'www.itsasap.com',
+    
   }
     ],
   },
