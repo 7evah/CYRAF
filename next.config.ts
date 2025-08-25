@@ -76,8 +76,8 @@ const nextConfig: NextConfig = {
   },
   webpack(config) {
     config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
+      test: /\.(mp4|webm|ogg)$/,
+      type: "asset/resource",
     });
     return config;
   },
