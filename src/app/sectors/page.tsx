@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect, useState as useStateReact } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
 import { DemoModal } from "@/components/landing/demo-modal";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { useInView } from "react-intersection-observer";
 import giftt from "@/components/cybersecurity-framework.webp";
 
 const timelineData = [
@@ -67,12 +66,12 @@ const timelineData = [
   },
 ];
 
-// ✅ Lazy loading Vimeo video wrapper (fetches poster dynamically)
+// ✅ Vimeo video with poster (no inView, loads immediately)
 const LazyVideo = ({ src, vimeoId }: { src: string; vimeoId: string }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const [poster, setPoster] = useState<string | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
-  // Fetch Vimeo poster
+  // Fetch Vimeo thumbnail
   useEffect(() => {
     fetch(`https://vimeo.com/api/v2/video/${vimeoId}.json`)
       .then((res) => res.json())
@@ -85,31 +84,31 @@ const LazyVideo = ({ src, vimeoId }: { src: string; vimeoId: string }) => {
   }, [vimeoId]);
 
   return (
-    <div
-      ref={ref}
-      className="aspect-video rounded-xl overflow-hidden shadow-lg relative"
-    >
-      {/* Poster fallback from Vimeo */}
+    <div className="aspect-video rounded-xl overflow-hidden shadow-lg relative">
+      {/* Poster placeholder */}
       {poster && (
         <Image
           src={poster}
-          alt="loading preview"
+          alt="Video preview"
           fill
-          className="object-cover"
+          className={`object-cover transition-opacity duration-700 ${
+            loaded ? "opacity-0" : "opacity-100"
+          }`}
         />
       )}
 
-      {/* Vimeo iframe loads only once when in view */}
-      {inView && (
-        <iframe
-          src={src}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          className="absolute top-0 left-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
-      )}
+      {/* Vimeo iframe (loads immediately) */}
+      <iframe
+        src={src}
+        frameBorder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+      />
     </div>
   );
 };
