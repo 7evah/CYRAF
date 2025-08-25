@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useState as useStateReact } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
@@ -16,7 +16,7 @@ const timelineData = [
     description:
       "Protecting vital assets and networks fundamental to national security, economic stability, and public well-being.",
     videoSrc:
-      "https://player.vimeo.com/video/1112911257?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112911257?background=1&autoplay=1&loop=1&muted=1&quality=720p",
     vimeoId: "1112911257",
     align: "left",
   },
@@ -25,7 +25,7 @@ const timelineData = [
     description:
       "Railway operators face evolving threats and regulations, requiring stronger cybersecurity measures to protect operational technology and ensure safe operations.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912708?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912708?background=1&autoplay=1&loop=1&muted=1&quality=720p",
     vimeoId: "1112912708",
     align: "right",
   },
@@ -34,7 +34,7 @@ const timelineData = [
     description:
       "Cyberattacks on energy systems can disrupt essential services and even compromise national security, making robust protection vital.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912666?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912666?background=1&autoplay=1&loop=1&muted=1&quality=720p",
     vimeoId: "1112912666",
     align: "left",
   },
@@ -43,7 +43,7 @@ const timelineData = [
     description:
       "From EHRs to medical devices, healthcare systems are prime cyber targets. Securing them is crucial for patient safety and public health.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912625?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912625?background=1&autoplay=1&loop=1&muted=1&quality=720p",
     vimeoId: "1112912625",
     align: "right",
   },
@@ -52,7 +52,7 @@ const timelineData = [
     description:
       "Cyber threats to aviation can disrupt flight operations and endanger lives, making this sector a high-security priority.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912573?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912573?background=1&autoplay=1&loop=1&muted=1&quality=720p",
     vimeoId: "1112912573",
     align: "left",
   },
@@ -61,18 +61,19 @@ const timelineData = [
     description:
       "Interconnected smart city systems need strong cybersecurity to ensure safety, reliability, and resilience against cyberattacks.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912501?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912501?background=1&autoplay=1&loop=1&muted=1&quality=540p",
     vimeoId: "1112912501",
     align: "right",
   },
 ];
 
-// ✅ Lazy loading Vimeo video wrapper (fetches poster dynamically)
+// ✅ Lazy loading Vimeo video wrapper (with poster + smooth fade)
 const LazyVideo = ({ src, vimeoId }: { src: string; vimeoId: string }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const [poster, setPoster] = useState<string | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
-  // Fetch Vimeo poster
+  // Fetch Vimeo poster dynamically
   useEffect(() => {
     fetch(`https://vimeo.com/api/v2/video/${vimeoId}.json`)
       .then((res) => res.json())
@@ -89,25 +90,32 @@ const LazyVideo = ({ src, vimeoId }: { src: string; vimeoId: string }) => {
       ref={ref}
       className="aspect-video rounded-xl overflow-hidden shadow-lg relative"
     >
-      {/* Poster fallback from Vimeo */}
+      {/* Poster placeholder */}
       {poster && (
         <Image
           src={poster}
-          alt="loading preview"
+          alt="Video preview"
           fill
-          className="object-cover"
+          className={`object-cover transition-opacity duration-700 ${
+            loaded ? "opacity-0" : "opacity-100"
+          }`}
         />
       )}
 
-      {/* Vimeo iframe loads only once when in view */}
+      {/* Vimeo iframe */}
       {inView && (
         <iframe
           src={src}
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
-          className="absolute top-0 left-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+       
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
           loading="lazy"
+          onLoad={() => setLoaded(true)}
+          style={{ willChange: "opacity, transform" }}
         />
       )}
     </div>
