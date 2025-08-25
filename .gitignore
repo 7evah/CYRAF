@@ -43,3 +43,9 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useState as useStateReact } from "react";
 import Image from "next/image";
 import { Header } from "@/components/landing/header-notscrolled";
 import { Footer } from "@/components/landing/footer";
@@ -15,73 +15,100 @@ const timelineData = [
     title: "Critical Infrastructure",
     description:
       "Protecting vital assets and networks fundamental to national security, economic stability, and public well-being.",
-    videoSrc: "/videos/Critical-Infrastructure.mp4",
-    poster: "/videos/posters/Critical-Infrastructure.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112911257?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112911257",
     align: "left",
   },
   {
     title: "Transportation",
     description:
       "Railway operators face evolving threats and regulations, requiring stronger cybersecurity measures to protect operational technology and ensure safe operations.",
-    videoSrc: "/videos/Transportation.mp4",
-    poster: "/videos/posters/Transportation.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112912708?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112912708",
     align: "right",
   },
   {
     title: "Power & Electricity",
     description:
       "Cyberattacks on energy systems can disrupt essential services and even compromise national security, making robust protection vital.",
-    videoSrc: "/videos/Power_and_Electricity_generation.mp4",
-    poster: "/videos/posters/Power_and_Electricity.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112912666?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112912666",
     align: "left",
   },
   {
     title: "Healthcare",
     description:
       "From EHRs to medical devices, healthcare systems are prime cyber targets. Securing them is crucial for patient safety and public health.",
-    videoSrc: "/videos/Healthcare.mp4",
-    poster: "/videos/posters/Healthcare.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112912625?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112912625",
     align: "right",
   },
   {
     title: "Aviation",
     description:
       "Cyber threats to aviation can disrupt flight operations and endanger lives, making this sector a high-security priority.",
-    videoSrc: "/videos/Aviation.mp4",
-    poster: "/videos/posters/Aviation.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112912573?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112912573",
     align: "left",
   },
   {
     title: "Smart Cities",
     description:
       "Interconnected smart city systems need strong cybersecurity to ensure safety, reliability, and resilience against cyberattacks.",
-    videoSrc: "/videos/Smart_cities.mp4",
-    poster: "/videos/posters/Smart_cities.jpg",
+    videoSrc:
+      "https://player.vimeo.com/video/1112912501?background=1&autoplay=1&loop=1&muted=1",
+    vimeoId: "1112912501",
     align: "right",
   },
 ];
 
-// ✅ Lazy loading video wrapper
-const LazyVideo = ({ src, poster }: { src: string; poster: string }) => {
+// ✅ Lazy loading Vimeo video wrapper (fetches poster dynamically)
+const LazyVideo = ({ src, vimeoId }: { src: string; vimeoId: string }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [poster, setPoster] = useState<string | null>(null);
+
+  // Fetch Vimeo poster
+  useEffect(() => {
+    fetch(`https://vimeo.com/api/v2/video/${vimeoId}.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data[0]?.thumbnail_large) {
+          setPoster(data[0].thumbnail_large);
+        }
+      })
+      .catch(() => {});
+  }, [vimeoId]);
 
   return (
-    <div ref={ref} className="aspect-video rounded-xl overflow-hidden shadow-lg">
-      {inView ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="none"
-          poster={poster}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-        >
-          <source src={src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      ) : (
-        <Image src={poster} alt="loading preview" fill className="object-cover" />
+    <div
+      ref={ref}
+      className="aspect-video rounded-xl overflow-hidden shadow-lg relative"
+    >
+      {/* Poster fallback from Vimeo */}
+      {poster && (
+        <Image
+          src={poster}
+          alt="loading preview"
+          fill
+          className="object-cover"
+        />
+      )}
+
+      {/* Vimeo iframe loads only once when in view */}
+      {inView && (
+        <iframe
+          src={src}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          className="absolute top-0 left-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
       )}
     </div>
   );
@@ -145,13 +172,13 @@ export default function SectorsPage() {
                       </div>
                       <div className="hidden md:block sectors-timeline-node" />
                       <div className="sectors-timeline-content">
-                        <LazyVideo src={item.videoSrc} poster={item.poster} />
+                        <LazyVideo src={item.videoSrc} vimeoId={item.vimeoId} />
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="sectors-timeline-content">
-                        <LazyVideo src={item.videoSrc} poster={item.poster} />
+                        <LazyVideo src={item.videoSrc} vimeoId={item.vimeoId} />
                       </div>
                       <div className="hidden md:block sectors-timeline-node" />
                       <div className="sectors-timeline-content text-left">
