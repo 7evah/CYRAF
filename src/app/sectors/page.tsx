@@ -33,7 +33,7 @@ const timelineData = [
     description:
       "Cyberattacks on energy systems can disrupt essential services and even compromise national security, making robust protection vital.",
     videoSrc:
-      "https://player.vimeo.com/video/1112912666?background=1&autoplay=1&loop=1&muted=1",
+      "https://player.vimeo.com/video/1112912666?background=1&autoplay=1&loop=1&muted=1#t=2s",
     vimeoId: "1112912666",
     align: "left",
   },
