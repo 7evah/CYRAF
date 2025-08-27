@@ -176,27 +176,36 @@ export default function JobDetailsPage() {
                 </div>
             </main>
             <Footer />
-
             <Dialog open={applicationModalOpen} onOpenChange={setApplicationModalOpen}>
-                <DialogContent className="sm:max-w-lg">
-                    <DialogHeader>
-                        <DialogTitle className="text-2xl">Apply for {job.title}</DialogTitle>
-                        <DialogDescription>We're excited to review your application.</DialogDescription>
-                    </DialogHeader>
-                    <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            {/* Added w-11/12 for smaller screens */}
+            <DialogContent className="w-11/12 sm:max-w-lg">
+                <DialogHeader>
+                    <DialogTitle className="text-2xl">Apply for {job.title}</DialogTitle>
+                    <DialogDescription>We're excited to review your application.</DialogDescription>
+                </DialogHeader>
+                <form onSubmit={handleSubmit} className="mt-6 space-y-4 md:grid md:grid-cols-2 md:gap-4">
+                    <div className="md:col-span-1">
                         <Input name="name" placeholder="Full Name" required />
+                    </div>
+                    <div className="md:col-span-1">
                         <Input type="email" name="email" placeholder="Email Address" required />
+                    </div>
+                    <div className="md:col-span-2">
                         <Input name="position" defaultValue={job.title} readOnly required />
-                        <div>
-                            <label htmlFor="cv" className="block text-sm font-medium text-foreground mb-1">Upload CV</label>
-                            <Input type="file" name="cv" id="cv" required />
-                        </div>
+                    </div>
+                    <div className="md:col-span-2">
+                        <label htmlFor="cv" className="block text-sm font-medium text-foreground mb-1">Upload CV</label>
+                        <Input type="file" name="cv" id="cv" required />
+                    </div>
+                    <div className="md:col-span-2">
                         <Button type="submit" className="w-full" disabled={loading}>
                             {loading ? "Submitting..." : "Submit Application"}
                         </Button>
-                    </form>
-                </DialogContent>
-            </Dialog>
+                    </div>
+                </form>
+            </DialogContent>
+        </Dialog>
+
         </div>
     );
 }
