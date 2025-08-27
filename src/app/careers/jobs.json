@@ -1,0 +1,143 @@
+[
+  {
+    "id": "senior-ot-security-consultant",
+    "title": "Senior OT Security Consultant",
+    "department": "Engineering",
+    "location": "Remote",
+    "type": "Full-time",
+    "aboutRole": "As a Senior OT Security Consultant at Cyraf, you will be a trusted advisor to our clients, helping them navigate the complex landscape of industrial cybersecurity. You will lead assessments, design robust security architectures, and develop strategies to protect critical infrastructure against sophisticated cyber threats. This role requires a deep understanding of both operational technology (OT) environments and cybersecurity principles.",
+    "responsibilities": [
+      "Lead cybersecurity risk assessments for OT and ICS environments based on standards like ISA/IEC 62443.",
+      "Design and implement security architectures for industrial networks, including network segmentation, firewalls, and intrusion detection systems.",
+      "Develop and deliver security strategies, policies, and procedures tailored to client needs.",
+      "Serve as a subject matter expert on OT security, providing guidance to both clients and internal teams.",
+      "Conduct vulnerability assessments and penetration testing on industrial control systems.",
+      "Stay current with the latest OT security threats, vulnerabilities, and mitigation techniques."
+    ],
+    "requiredQualifications": [
+      "5+ years of experience in cybersecurity, with at least 3 years focused on OT/ICS environments.",
+      "In-depth knowledge of industrial control systems (e.g., SCADA, DCS, PLCs) and industrial protocols (e.g., Modbus, DNP3, OPC).",
+      "Proven experience with network security architecture and technologies in an industrial context.",
+      "Strong understanding of standards such as ISA/IEC 62443, NIST Cybersecurity Framework, and NERC CIP.",
+      "Excellent communication and client-facing skills."
+    ],
+    "preferredQualifications": [
+      "Professional certifications such as GICSP, GRID, or CISSP.",
+      "Experience in critical infrastructure sectors like energy, transportation, or manufacturing.",
+      "Hands-on experience with OT security tools and platforms.",
+      "Bachelor's degree in Cybersecurity, Computer Science, or a related field."
+    ],
+    "whatWeOffer": [
+      "A competitive salary and comprehensive benefits package.",
+      "Flexible remote work options.",
+      "A budget for professional development and certifications.",
+      "The opportunity to work on challenging projects with a significant real-world impact.",
+      "A collaborative and supportive team environment where your expertise is valued."
+    ]
+  },
+  {
+    "id": "cyber-threat-intelligence-analyst",
+    "title": "Cyber Threat Intelligence Analyst",
+    "department": "Security Operations",
+    "location": "Casablanca, Morocco",
+    "type": "Full-time",
+    "aboutRole": "The Cyber Threat Intelligence Analyst will be responsible for identifying, analyzing, and reporting on cyber threats targeting critical infrastructure. You will be a key part of our proactive defense strategy, providing actionable intelligence to help our clients stay ahead of adversaries.",
+    "responsibilities": [
+      "Monitor and analyze threat data from various sources to identify new and emerging threats to OT environments.",
+      "Produce detailed intelligence reports, threat briefs, and strategic assessments for clients.",
+      "Track threat actor groups, their tactics, techniques, and procedures (TTPs).",
+      "Collaborate with the incident response team to provide context during security incidents.",
+      "Develop and maintain a knowledge base of OT-specific threats and vulnerabilities."
+    ],
+    "requiredQualifications": [
+      "2+ years of experience in a threat intelligence or security analyst role.",
+      "Strong understanding of the cyber threat landscape and intelligence lifecycle.",
+      "Experience with intelligence analysis tools and platforms (e.g., MISP, Maltego).",
+      "Excellent analytical and report-writing skills.",
+      "Ability to work effectively in a fast-paced environment."
+    ],
+    "preferredQualifications": [
+      "Experience focusing on threats to industrial or critical infrastructure sectors.",
+      "Familiarity with the MITRE ATT&CK for ICS framework.",
+      "Certifications such as GCTI, CTIA, or CEH.",
+      "Proficiency in multiple languages is a plus."
+    ],
+    "whatWeOffer": [
+      "A competitive salary and comprehensive benefits package.",
+      "State-of-the-art security operations center.",
+      "A budget for professional development and certifications.",
+      "The opportunity to work on challenging projects with a significant real-world impact.",
+      "A collaborative and supportive team environment where your expertise is valued."
+    ]
+  },
+  {
+    "id": "incident-response-lead",
+    "title": "Incident Response Lead",
+    "department": "Security Operations",
+    "location": "Remote",
+    "type": "Full-time",
+    "aboutRole": "The Incident Response Lead will manage and direct our response to cybersecurity incidents within client OT environments. You will be responsible for coordinating all phases of the incident response lifecycle, from initial detection to post-incident analysis, ensuring minimal impact on critical operations.",
+    "responsibilities": [
+      "Lead and manage the response to security incidents, including containment, eradication, and recovery.",
+      "Conduct digital forensics and malware analysis on affected industrial systems.",
+      "Develop and maintain incident response playbooks and procedures for OT environments.",
+      "Coordinate with client stakeholders, legal teams, and external parties during an incident.",
+      "Lead post-incident reviews and provide recommendations for security improvements."
+    ],
+    "requiredQualifications": [
+      "5+ years of experience in incident response, with a focus on complex enterprise or industrial environments.",
+      "Expertise in digital forensics, memory analysis, and network traffic analysis.",
+      "Strong leadership and communication skills, with the ability to manage high-stress situations.",
+      "Deep understanding of incident response frameworks and methodologies.",
+      "Experience with EDR, SIEM, and other security monitoring tools."
+    ],
+    "preferredQualifications": [
+      "Experience responding to incidents in OT/ICS environments.",
+      "Certifications such as GCIH, GCFA, or GNFA.",
+      "Experience with scripting languages (e.g., Python) for automation.",
+      "Experience in a consulting or client-facing role."
+    ],
+    "whatWeOffer": [
+      "A competitive salary and comprehensive benefits package.",
+      "Flexible remote work options.",
+      "A budget for professional development and certifications.",
+      "The opportunity to work on challenging projects with a significant real-world impact.",
+      "A collaborative and supportive team environment where your expertise is valued."
+    ]
+  },
+  {
+    "id": "marketing-manager-cybersecurity",
+    "title": "Marketing Manager, Cybersecurity",
+    "department": "Marketing",
+    "location": "Remote",
+    "type": "Full-time",
+    "aboutRole": "The Marketing Manager will be responsible for developing and executing marketing strategies that build Cyraf's brand and drive demand for our specialized cybersecurity services. You will create compelling content and campaigns that resonate with leaders in critical infrastructure sectors.",
+    "responsibilities": [
+      "Develop and manage multi-channel marketing campaigns (digital, content, events).",
+      "Create high-quality marketing content, including whitepapers, case studies, blog posts, and webinars.",
+      "Manage our corporate website and social media presence to increase engagement.",
+      "Analyze campaign performance and provide reports to stakeholders.",
+      "Collaborate with the sales team to generate and nurture qualified leads."
+    ],
+    "requiredQualifications": [
+      "5+ years of B2B marketing experience, preferably in the cybersecurity or technology industry.",
+      "Proven track record of developing and executing successful marketing campaigns.",
+      "Excellent writing, editing, and communication skills.",
+      "Strong understanding of digital marketing, SEO, and content marketing principles.",
+      "Experience with marketing automation and CRM platforms."
+    ],
+    "preferredQualifications": [
+      "Experience marketing to OT or industrial audiences.",
+      "A strong understanding of the cybersecurity landscape and its challenges.",
+      "Experience with account-based marketing (ABM) strategies.",
+      "Bachelor's degree in Marketing, Business, or a related field."
+    ],
+    "whatWeOffer": [
+      "A competitive salary and comprehensive benefits package.",
+      "Flexible remote work options.",
+      "A budget for professional development and certifications.",
+      "The opportunity to shape the brand of a leading cybersecurity firm.",
+      "A collaborative and supportive team environment where your expertise is valued."
+    ]
+  }
+]

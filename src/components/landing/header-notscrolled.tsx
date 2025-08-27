@@ -39,7 +39,7 @@ export function Header({ onBookDemoClick }: { onBookDemoClick: () => void }) {
       ],
     },
     { href: "/about", label: "About" },
-    { href: "#careers", label: "Careers" },
+    { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
   ];
 
